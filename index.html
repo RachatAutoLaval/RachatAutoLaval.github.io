@@ -1,331 +1,288 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rachat Auto Laval — Estimation gratuite</title>
-  <meta name="description" content="Rachat de voiture à Laval. Estimation gratuite, réponse rapide. Mayenne (53).">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachat Auto Laval – Estimation gratuite</title>
+<meta name="description" content="Rachat de voiture à Laval. Estimation gratuite, sans engagement. Service local en Mayenne.">
 
-  <style>
-    :root{
-      --text:#0a0a0a;
-      --muted:#6b7280;
-      --bg:#ffffff;
-      --line:rgba(10,10,10,.14);
-      --r:0px;
-      --brand:#000000; /* Audi noir */
-    }
+<style>
+:root{
+  --text:#0a0a0a;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --line:rgba(10,10,10,.14);
+  --brand:#000;
+}
 
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 
-    .wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding:26px 18px;
-    }
+.wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
 
-    /* HEADER */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:14px 2px 18px;
-      border-bottom:1px solid var(--line);
-    }
+/* HEADER */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding:16px 0;
+}
 
-    .logo{
-      height:110px;   /* LOGO ENCORE PLUS GROS */
-      width:auto;
-      display:block;
-    }
+.logo{
+  height:130px; /* LOGO TRÈS GRAND */
+  width:auto;
+}
 
-    nav{
-      display:flex;
-      gap:22px;
-      align-items:center;
-      color:var(--text);
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      font-size:12px;
-    }
-    nav a{opacity:.70}
-    nav a:hover{opacity:1}
+nav{
+  display:flex;
+  gap:24px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:600;
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 18px;
-      border-radius:0;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:700;
-      text-transform:uppercase;
-      font-size:12px;
-      letter-spacing:1px;
-    }
+nav a{opacity:.7}
+nav a:hover{opacity:1}
 
-    .btnPrimary{
-      border:1px solid #000;
-      background:#000;
-      color:#fff;
-    }
+.btn{
+  padding:10px 18px;
+  border:1px solid var(--line);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  background:#fff;
+}
 
-    /* HERO */
-    .hero{
-      margin-top:18px;
-      position:relative;
-      border-radius:0;
-      overflow:hidden;
-      border:1px solid var(--line);
-      min-height:340px;
-      display:flex;
-      align-items:flex-end;
-    }
+.btnPrimary{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+}
 
-    .heroBg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg,
-          rgba(255,255,255,0) 0%,
-          rgba(255,255,255,.05) 60%,
-          rgba(255,255,255,.82) 100%
-        ),
-        url("hero-voiture.jpg");
-      background-size:cover;
-      background-position:center;
-    }
+/* HERO */
+.hero{
+  margin-top:18px;
+  position:relative;
+  border:1px solid var(--line);
+  min-height:340px;
+  display:flex;
+  align-items:flex-end;
+}
 
-    .heroIn{
-      position:relative;
-      width:100%;
-      padding:18px 22px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:18px;
-      background:transparent;
-    }
+.heroBg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,.08) 60%,
+      rgba(255,255,255,.85) 100%
+    ),
+    url("hero-voiture.jpg");
+  background-size:cover;
+  background-position:center;
+}
 
-    h1{
-      margin:0 0 6px;
-      font-size:36px;
-      line-height:1.1;
-      letter-spacing:-.3px;
-      font-weight:600;
-    }
+.heroIn{
+  position:relative;
+  padding:20px 22px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
 
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.5;
-      font-weight:500;
-      max-width:60ch;
-    }
+h1{
+  margin:0 0 6px;
+  font-size:36px;
+  font-weight:600;
+  letter-spacing:-.3px;
+}
 
-    .heroActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:flex-end;
-    }
+.subtitle{
+  margin:0;
+  color:var(--muted);
+  max-width:60ch;
+  font-size:16px;
+}
 
-    /* AVANTAGES */
-    .section{
-      margin-top:34px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
-    }
+.heroActions{display:flex;gap:10px}
 
-    .card{
-      border-top:2px solid #000;
-      padding:18px 0;
-      background:transparent;
-    }
+/* POURQUOI CHOISIR */
+.whyTitle{
+  margin-top:44px;
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+}
 
-    .card b{
-      display:block;
-      margin-bottom:8px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      font-size:12px;
-    }
+.why{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:22px;
+}
 
-    .card span{
-      color:var(--muted);
-      font-weight:500;
-      line-height:1.55;
-    }
+.panel{
+  border:1px solid var(--line);
+  padding:18px;
+}
 
-    /* ESTIMATION */
-    .estimate{
-      margin-top:34px;
-      border-top:2px solid #000;
-      padding:22px 0;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-      align-items:start;
-    }
+.panel h3{
+  margin:0 0 6px;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:800;
+}
 
-    .estimate h2{
-      margin:0 0 8px;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      font-weight:700;
-    }
+.panel p{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:14px;
+}
 
-    .estimate p{
-      margin:0;
-      color:var(--muted);
-      font-weight:500;
-      line-height:1.6;
-    }
+.miniForm{display:grid;gap:10px}
 
-    form{
-      display:grid;
-      gap:10px;
-    }
+.miniRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
 
-    .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
+input,select{
+  padding:12px;
+  border:1px solid var(--line);
+  font-size:14px;
+}
 
-    input,textarea{
-      padding:12px 12px;
-      border-radius:0;
-      border:1px solid var(--line);
-      font-size:15px;
-      outline:none;
-      background:#fff;
-    }
+.steps{display:grid;gap:14px}
 
-    textarea{
-      min-height:110px;
-      resize:vertical;
-    }
+.step{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:12px;
+}
 
-    footer{
-      margin-top:52px;
-      border-top:1px solid var(--line);
-      padding:18px 2px 6px;
-      color:var(--muted);
-      font-weight:600;
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+.stepNum{
+  width:28px;height:28px;
+  border:1px solid #000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
 
-    /* MOBILE */
-    @media(max-width:980px){
-      nav{display:none}
-      .logo{height:92px}
-      .hero{min-height:320px}
-      .heroIn{flex-direction:column;align-items:flex-start}
-      h1{font-size:30px}
-      .section{grid-template-columns:1fr}
-      .estimate{grid-template-columns:1fr}
-      .row{grid-template-columns:1fr}
-    }
-  </style>
+.step b{display:block;font-size:14px}
+.step span{color:var(--muted);font-size:14px}
+
+/* FOOTER */
+footer{
+  margin-top:48px;
+  border-top:1px solid var(--line);
+  padding:18px 0;
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:980px){
+  nav{display:none}
+  .logo{height:100px}
+  .heroIn{flex-direction:column}
+  .why{grid-template-columns:1fr}
+  .miniRow{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <a href="index.html" aria-label="Accueil">
-        <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
-      </a>
+<div class="wrap">
 
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="#estimation">Estimation</a>
-        <a href="comment-ca-marche.html">Comment ça marche</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header>
+  <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Estimation</a>
+    <a href="#">Comment ça marche</a>
+    <a href="#">Contact</a>
+  </nav>
+  <a class="btn btnPrimary">Estimation gratuite</a>
+</header>
 
-      <a class="btn btnPrimary" href="#estimation">Estimation gratuite</a>
-    </header>
-
-    <section class="hero" aria-label="Bandeau">
-      <div class="heroBg" aria-hidden="true"></div>
-
-      <div class="heroIn">
-        <div>
-          <h1>Rachat de voiture à Laval</h1>
-          <p class="subtitle">Estimation gratuite • Réponse rapide • Service local en Mayenne (53)</p>
-        </div>
-
-        <div class="heroActions">
-          <a class="btn btnPrimary" href="#estimation">Faire une estimation</a>
-          <a class="btn" href="contact.html">Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Avantages">
-      <div class="card">
-        <b>Simple</b>
-        <span>Vous décrivez le véhicule en 2 minutes.</span>
-      </div>
-      <div class="card">
-        <b>Clair</b>
-        <span>Offre transparente, sans engagement.</span>
-      </div>
-      <div class="card">
-        <b>Sûr</b>
-        <span>Accompagnement et paiement sécurisé.</span>
-      </div>
-    </section>
-
-    <section class="estimate" id="estimation" aria-label="Estimation">
-      <div>
-        <h2>Demande d’estimation</h2>
-        <p>Remplissez le formulaire. Nous vous recontactons dès que possible.</p>
-      </div>
-
-      <!-- Remplace contact@exemple.fr par ton email -->
-      <form action="mailto:contact@exemple.fr" method="post" enctype="text/plain">
-        <div class="row">
-          <input name="Véhicule" placeholder="Marque / Modèle / Année" required>
-          <input name="Kilométrage" placeholder="Kilométrage" required>
-        </div>
-        <div class="row">
-          <input name="Nom" placeholder="Nom" required>
-          <input name="Téléphone" placeholder="Téléphone" required>
-        </div>
-        <textarea name="Message" placeholder="État (entretien, options, défauts…)" ></textarea>
-        <button class="btn btnPrimary" type="submit">Envoyer</button>
-      </form>
-    </section>
-
-    <footer>
-      <div>© Rachat Auto Laval</div>
-      <div><a href="comment-ca-marche.html">Comment ça marche</a> • <a href="contact.html">Contact</a></div>
-    </footer>
+<section class="hero">
+  <div class="heroBg"></div>
+  <div class="heroIn">
+    <div>
+      <h1>Rachat de voiture à Laval</h1>
+      <p class="subtitle">Estimation gratuite • Réponse rapide • Service local Mayenne</p>
+    </div>
+    <div class="heroActions">
+      <a class="btn btnPrimary">Faire une estimation</a>
+      <a class="btn">Contact</a>
+    </div>
   </div>
+</section>
+
+<h2 class="whyTitle">Pourquoi choisir Rachat-Auto.fr ?</h2>
+
+<section class="why">
+  <div class="panel">
+    <h3>Estimation gratuite & sans engagement</h3>
+    <p>Obtenez une offre rapide pour votre véhicule.</p>
+
+    <form class="miniForm">
+      <select><option>Marque</option></select>
+      <div class="miniRow">
+        <input placeholder="Modèle">
+        <input placeholder="Année">
+      </div>
+      <input placeholder="Code postal">
+      <button class="btn btnPrimary">Commencer mon estimation</button>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h3>Comment ça marche ?</h3>
+    <p>3 étapes simples pour vendre votre voiture.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="stepNum">1</div>
+        <div><b>Estimation en ligne</b><span>Décrivez votre véhicule.</span></div>
+      </div>
+      <div class="step">
+        <div class="stepNum">2</div>
+        <div><b>Offre claire</b><span>Proposition sans surprise.</span></div>
+      </div>
+      <div class="step">
+        <div class="stepNum">3</div>
+        <div><b>Paiement sécurisé</b><span>Transaction rapide.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© Rachat Auto Laval</div>
+  <div>Contact • Mentions légales</div>
+</footer>
+
+</div>
 </body>
 </html>
