@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact – Rachat Auto Laval</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez Rachat Auto Laval : téléphone, email, message.">
+  <style>
+    :root{--vert:#0f3d2e;--vert2:#0b2f24;--texte:#0b1220;--gris:#5b677a;--fond:#f5f6fa;--blanc:#fff;--line:rgba(15,23,42,.10);--ombre:0 20px 50px rgba(0,0,0,.10);--r:22px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--texte);background:var(--fond)}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1200px;margin:auto;padding:16px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .site-logo{height:48px;width:auto;display:block}
+    nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    nav a{color:var(--gris);font-weight:800}
+    nav a:hover{color:var(--texte)}
+    .cta{background:linear-gradient(180deg,var(--vert),var(--vert2));color:#fff;padding:12px 16px;border-radius:14px;font-weight:900;box-shadow:var(--ombre)}
+    .hero{margin-top:14px;border-radius:28px;overflow:hidden;box-shadow:var(--ombre);border:1px solid var(--line);position:relative}
+    .heroBg{position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.75) 48%,rgba(255,255,255,.20) 75%,rgba(255,255,255,0) 100%),
+      url("hero-voiture.jpg");background-size:cover;background-position:center}
+    .heroIn{position:relative;padding:42px}
+    h1{margin:0 0 10px;font-size:40px;line-height:1.1}
+    .sub{margin:0;color:var(--gris);font-size:18px;max-width:70ch;line-height:1.55}
+    .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-top:18px}
+    .card{background:var(--blanc);border-radius:var(--r);padding:18px;border:1px solid var(--line);box-shadow:0 14px 30px rgba(0,0,0,.07)}
+    .card h2{margin:0 0 10px}
+    .pill{display:flex;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .pill b{display:block}
+    .pill span{display:block;color:var(--gris);font-weight:700}
+    form{display:grid;gap:10px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,textarea{padding:12px;border-radius:12px;border:1px solid #ddd;font-size:16px}
+    textarea{min-height:120px}
+    .btn{background:linear-gradient(180deg,var(--vert),var(--vert2));color:#fff;padding:14px;border-radius:14px;font-weight:900;border:none;cursor:pointer}
+    footer{margin-top:26px;border-top:1px solid var(--line);padding:18px 0;color:var(--gris);font-weight:700;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:900px){h1{font-size:32px}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.heroIn{padding:28px}.site-logo{height:40px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html"><img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="site-logo"></a>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#estimation">Estimation</a>
+        <a href="comment-ca-marche.html">Comment ça marche ?</a>
+        <a href="contact.html" style="color:var(--texte)">Contact</a>
+      </nav>
+      <a class="cta" href="index.html#estimation">Estimation gratuite</a>
+    </header>
+
+    <section class="hero">
+      <div class="heroBg"></div>
+      <div class="heroIn">
+        <h1>Contactez-nous facilement</h1>
+        <p class="sub">Réponse rapide • Service sûr & local</p>
+      </div>
+    </section>
+
+    <section style="margin-top:18px" class="grid">
+      <div class="card">
+        <h2>Nous contacter</h2>
+
+        <div class="pill">
+          📞
+          <div>
+            <b>Appeler</b>
+            <span>02 43 67 89 00 — Lun–Sam : 8h–19h</span>
+          </div>
+        </div>
+
+        <div class="pill" style="margin-top:10px">
+          ✉️
+          <div>
+            <b>Email</b>
+            <span>contact@exemple.fr</span>
+          </div>
+        </div>
+
+        <div class="pill" style="margin-top:10px">
+          📍
+          <div>
+            <b>Agence</b>
+            <span>Laval & Mayenne (53)</span>
+          </div>
+        </div>
+
+        <p style="margin-top:14px;color:var(--gris);line-height:1.6">
+          Vous pouvez également faire une estimation directement depuis la page d’accueil.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Envoyez-nous un message</h2>
+
+        <!-- Version gratuite : envoi vers email -->
+        <form action="mailto:contact@exemple.fr" method="post" enctype="text/plain">
+          <div class="row">
+            <input name="Nom" placeholder="Nom" required>
+            <input name="Email" placeholder="Email" required>
+          </div>
+          <input name="Téléphone" placeholder="Téléphone">
+          <textarea name="Message" placeholder="Message" required></textarea>
+          <button class="btn" type="submit">Envoyer le message</button>
+          <div style="margin-top:8px;color:var(--gris);font-size:13px;font-weight:700">
+            En envoyant ce message, vous acceptez d’être recontacté dans le cadre de cette demande.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Rachat Auto Laval — Agence Laval • Mayenne</div>
+      <div><a href="index.html">Accueil</a> • <a href="comment-ca-marche.html">Comment ça marche</a> • Mentions légales</div>
+    </footer>
+  </div>
+</body>
+</html>
