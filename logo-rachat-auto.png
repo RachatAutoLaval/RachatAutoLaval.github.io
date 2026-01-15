@@ -1,1 +1,11 @@
+.logo{
+  height:60px;      /* logo plus gros */
+  width:auto;
+  display:block;
+}
 
+@media(max-width:980px){
+  .logo{
+    height:50px;
+  }
+}
