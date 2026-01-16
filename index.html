@@ -1,161 +1,106 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rachat Auto Laval – Estimation gratuite & RDV</title>
-  <meta name="description" content="Rachat de voiture à Laval. Estimation gratuite, sans engagement. RDV en ligne.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachat Auto Laval</title>
 
-  <style>
-    :root{--text:#0a0a0a;--muted:#6b7280;--bg:#fff;--line:rgba(0,0,0,.15);--max:1200px}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
+<style>
+:root{
+  --text:#0a0a0a;
+  --muted:#6b7280;
+  --line:rgba(0,0,0,.15);
+  --max:1200px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#fff;
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:18px;background:#fff}
-    .logo{height:200px;width:auto;display:block}
-    nav{display:flex;gap:26px;align-items:center;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:700;white-space:nowrap}
-    nav a{opacity:.65} nav a:hover{opacity:1}
+/* HEADER */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding-bottom:18px;
+}
+.logo{height:200px;width:auto}
+nav{
+  display:flex;
+  gap:26px;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+nav a{opacity:.6}
+nav a:hover{opacity:1}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;line-height:1}
-    .btnPrimary{background:#000;color:#fff;border-color:#000}
+/* HERO */
+.hero{
+  margin-top:20px;
+  border:1px solid var(--line);
+  padding:70px 40px;
+  text-align:center;
+}
+.hero h1{
+  font-size:42px;
+  margin:0 0 12px;
+}
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+}
+.btn{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 28px;
+  border:1px solid var(--line);
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.btnPrimary{
+  background:#000;
+  color:#fff;
+}
 
-    /* Hero */
-    .hero{margin-top:18px;position:relative;border:1px solid var(--line);min-height:380px;display:flex;align-items:flex-end;overflow:hidden}
-    .heroBg{
-      position:absolute;inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.10) 60%, rgba(255,255,255,.90) 100%),
-        url("hero-voiture.jpg");
-      background-size:cover;background-position:center;
-    }
-    .heroIn{position:relative;width:100%;padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-    .heroCard{max-width:640px;background:rgba(255,255,255,.92);border:1px solid var(--line);padding:18px 18px 16px}
-    h1{margin:0 0 8px;font-size:38px;font-weight:650;letter-spacing:-.3px;line-height:1.1}
-    .subtitle{margin:0;color:var(--muted);font-size:16px;line-height:1.5;font-weight:500}
-    .heroActions{display:flex;gap:10px;flex-wrap:wrap}
-
-    /* Sections */
-    .sectionTitle{margin:44px 0 10px;text-align:center;font-size:20px;font-weight:800;letter-spacing:-.2px}
-    .sectionHint{margin:0 0 16px;text-align:center;color:var(--muted);font-weight:500;font-size:14px;line-height:1.5}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .panel{border:1px solid var(--line);background:#fff;padding:18px}
-    .panel h3{margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:1px;font-weight:900}
-    .panel p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.55;font-weight:500}
-
-    /* Calendly */
-    .calBox{border:1px solid var(--line);background:#fff;overflow:hidden}
-    .calendly-inline-widget{min-width:320px;height:760px}
-
-    /* Contact quick */
-    .contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-
-    /* Mobile */
-    .callFixed{display:none}
-    @media(max-width:900px){
-      nav{display:none}
-      .wrap{padding:18px 12px}
-      .logo{height:140px}
-      .hero{min-height:340px}
-      .heroIn{flex-direction:column;align-items:flex-start}
-      h1{font-size:30px}
-      .grid2,.contactGrid{grid-template-columns:1fr}
-      .calendly-inline-widget{height:820px}
-      .callFixed{
-        display:flex;position:fixed;bottom:16px;left:50%;transform:translateX(-50%);
-        background:#000;color:#fff;padding:14px 22px;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;z-index:9999
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:900px){
+  nav{display:none}
+  .logo{height:140px}
+  .hero h1{font-size:30px}
+}
+</style>
 </head>
 
 <body>
-<div class="wrap" id="top">
+<div class="wrap">
 
-  <header>
-    <a href="index.html" aria-label="Accueil">
-      <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
-    </a>
+<header>
+  <a href="index.html">
+    <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
+  </a>
+  <nav>
+    <a href="index.html" style="opacity:1">Accueil</a>
+    <a href="estimation.html">Estimation</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="index.html" style="opacity:1;">Accueil</a>
-      <a href="estimation.html">Estimation</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="#rdv">RDV</a>
-    </nav>
-  </header>
-
-  <section class="hero" aria-label="Bandeau">
-    <div class="heroBg" aria-hidden="true"></div>
-
-    <div class="heroIn">
-      <div class="heroCard">
-        <h1>Rachat de voiture à Laval</h1>
-        <p class="subtitle">Estimation gratuite • Sans engagement • Réponse rapide • Mayenne (53)</p>
-      </div>
-
-      <div class="heroActions">
-        <a class="btn btnPrimary" href="estimation.html">Estimation</a>
-        <a class="btn" href="#rdv">RDV en ligne</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </section>
-
-  <h2 class="sectionTitle">Le plus simple pour vendre votre voiture</h2>
-  <p class="sectionHint">Un parcours clair : estimation → contact → finalisation.</p>
-
-  <section class="grid2" aria-label="Accès rapide">
-    <div class="panel">
-      <h3>Faire une estimation</h3>
-      <p>Accédez au formulaire complet (état carrosserie, entretien, documents, défauts…).</p>
-      <a class="btn btnPrimary" href="estimation.html">Accéder à l’estimation</a>
-    </div>
-
-    <div class="panel">
-      <h3>Questions / Infos</h3>
-      <p>Consultez la FAQ dédiée ou contactez-nous directement.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="faq.html">Voir la FAQ</a>
-        <a class="btn" href="contact.html">Page contact</a>
-      </div>
-    </div>
-  </section>
-
-  <h2 class="sectionTitle" id="rdv">Prendre rendez-vous</h2>
-  <p class="sectionHint">Choisissez un créneau. Confirmation immédiate.</p>
-
-  <section class="calBox">
-    <div class="calendly-inline-widget" data-url="https://calendly.com/rachatautolaval"></div>
-  </section>
-
-  <h2 class="sectionTitle">Contact rapide</h2>
-  <p class="sectionHint">Téléphone, email, carte et formulaire sur la page contact.</p>
-
-  <section class="contactGrid">
-    <div class="panel">
-      <h3>Téléphone</h3>
-      <p>Lun – Sam : 8h – 19h</p>
-      <a class="btn btnPrimary" href="tel:0243678900">02 43 67 89 00</a>
-    </div>
-    <div class="panel">
-      <h3>Page contact</h3>
-      <p>Adresse + carte Google + formulaire.</p>
-      <a class="btn" href="contact.html">Ouvrir la page contact</a>
-    </div>
-  </section>
-
-  <footer style="margin-top:44px;border-top:1px solid var(--line);padding:18px 0 10px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)">
-    <div>© Rachat Auto Laval</div>
-    <div><a href="faq.html">FAQ</a> • <a href="contact.html">Contact</a></div>
-  </footer>
+<section class="hero">
+  <h1>Rachat de voiture à Laval</h1>
+  <p>Estimation gratuite • Sans engagement • Réponse rapide</p>
+  <a class="btn btnPrimary" href="estimation.html">Faire une estimation</a>
+</section>
 
 </div>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<a href="tel:0243678900" class="callFixed">Appeler</a>
 </body>
 </html>
