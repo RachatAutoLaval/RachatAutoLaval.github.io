@@ -15,6 +15,12 @@
       --max:1200px;
     }
     *{box-sizing:border-box}
+    <div class="mobileBar" aria-label="Actions rapides">
+  <a href="faq.html">FAQ</a>
+  <a class="primary" href="tel:+33243678900">Appeler</a>
+  <a href="contact.html">Contact</a>
+</div>
+
     body{
       margin:0;
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -23,6 +29,45 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
+/* ===== BARRE FIXE MOBILE (ESTIMATION) ===== */
+.mobileBar{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+  z-index:9999;
+}
+.mobileBar a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  line-height:1;
+}
+.mobileBar a.primary{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+}
+
+/* évite que la barre cache le bas du formulaire */
+@media(max-width:900px){
+  body{padding-bottom:86px;}
+}
+@media(min-width:901px){
+  .mobileBar{display:none;}
+  body{padding-bottom:0;}
+}
 
     /* ===== HEADER ===== */
     header{
