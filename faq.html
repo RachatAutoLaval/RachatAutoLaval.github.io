@@ -30,7 +30,7 @@
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      padding-bottom:18px;
+      padding:10px 0 16px;
       border-bottom:1px solid var(--line);
       background:#fff;
     }
@@ -46,7 +46,7 @@
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
-      font-weight:700;
+      font-weight:800;
       white-space:nowrap;
     }
     nav a{opacity:.65}
@@ -62,7 +62,7 @@
     .hero h1{
       margin:0 0 8px;
       font-size:34px;
-      font-weight:650;
+      font-weight:750;
       letter-spacing:-.3px;
     }
     .hero p{
@@ -71,7 +71,7 @@
       font-size:15px;
       line-height:1.6;
       max-width:75ch;
-      font-weight:500;
+      font-weight:600;
     }
 
     /* ===== FAQ ===== */
@@ -89,7 +89,7 @@
     summary{
       cursor:pointer;
       font-size:15px;
-      font-weight:700;
+      font-weight:800;
       list-style:none;
     }
     summary::-webkit-details-marker{display:none}
@@ -98,7 +98,7 @@
       color:var(--muted);
       font-size:14px;
       line-height:1.6;
-      font-weight:500;
+      font-weight:600;
     }
 
     /* ===== FOOTER ===== */
@@ -114,15 +114,61 @@
       text-transform:uppercase;
       letter-spacing:1px;
       color:var(--muted);
+      font-weight:800;
+    }
+
+    /* ===== BARRE MOBILE (APPELER / ESTIMER / RDV) ===== */
+    .mobileBar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+      z-index:9999;
+    }
+    .mobileBar a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      line-height:1;
+    }
+    .mobileBar a.primary{
+      background:#000;
+      color:#fff;
+      border-color:#000;
     }
 
     /* ===== MOBILE ===== */
     @media(max-width:900px){
       nav{display:none}
       .wrap{padding:18px 12px}
-      .logo{height:140px}
+
+      /* logo centré sur mobile */
+      header{justify-content:center}
+      header a{display:flex;justify-content:center;width:100%}
+      .logo{height:160px}
+
       .hero h1{font-size:28px}
       summary{font-size:16px}
+
+      /* espace pour la barre */
+      body{padding-bottom:90px;}
+    }
+
+    /* Desktop : pas de barre */
+    @media(min-width:901px){
+      .mobileBar{display:none}
+      body{padding-bottom:0;}
     }
   </style>
 </head>
@@ -211,6 +257,13 @@
       </div>
     </footer>
 
+  </div>
+
+  <!-- BARRE FIXE MOBILE -->
+  <div class="mobileBar" aria-label="Actions rapides">
+    <a class="primary" href="tel:+33243678900">Appeler</a>
+    <a href="estimation.html">Estimer</a>
+    <a href="https://calendly.com/rachatautolaval" target="_blank" rel="noopener">RDV</a>
   </div>
 </body>
 </html>
