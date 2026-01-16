@@ -20,7 +20,8 @@
       background:#fff;
     }
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px 14px}
 
     /* HEADER */
     header{
@@ -28,209 +29,324 @@
       align-items:center;
       justify-content:space-between;
       border-bottom:1px solid var(--line);
-      padding-bottom:18px;
+      padding:10px 0 16px;
+      gap:14px;
     }
     .logo{
-      height:240px; /* TAILLE LOGO */
+      height:320px; /* grand mais ok mobile */
       width:auto;
       display:block;
     }
     nav{
       display:flex;
-      gap:28px;
+      gap:26px;
       font-size:12px;
-      font-weight:700;
+      font-weight:800;
       text-transform:uppercase;
       letter-spacing:1px;
+      white-space:nowrap;
     }
     nav a{opacity:.6}
     nav a:hover{opacity:1}
 
     /* HERO */
     .hero{
-      margin-top:20px;
+      margin-top:16px;
       position:relative;
-      min-height:540px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
       border:1px solid var(--line);
       overflow:hidden;
+      background:#fff;
     }
     .heroBg{
-      position:absolute;
-      inset:0;
+      height:320px; /* mobile: moins haut */
       background:
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.35)),
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)),
         url("agence-rachat-auto.jpg");
       background-size:cover;
       background-position:center 18%;
       background-repeat:no-repeat;
     }
     .heroCard{
-      position:relative;
-      background:rgba(255,255,255,.93);
-      max-width:1100px;
-      width:92%;
-      padding:60px 80px;
+      margin:-70px auto 0;
+      background:rgba(255,255,255,.94);
+      width:min(920px, 92%);
+      padding:22px 18px;
       text-align:center;
-      margin-top:140px;
       border:1px solid rgba(0,0,0,.15);
     }
     .heroCard h1{
-      margin:0 0 18px;
-      font-size:46px;
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-.3px;
+      font-weight:800;
     }
     .heroCard p{
       margin:0;
-      font-size:18px;
+      font-size:15px;
       line-height:1.6;
+      color:var(--muted);
+      font-weight:650;
+    }
+    .heroActions{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+    }
+    .actionBtn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      line-height:1;
+    }
+    .actionBtn.primary{
+      background:#000;
+      color:#fff;
+      border-color:#000;
     }
 
     /* SECTIONS */
     .grid{
-      margin-top:26px;
+      margin-top:18px;
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
+      grid-template-columns:1fr;
+      gap:14px;
     }
     .box{
       border:1px solid var(--line);
-      padding:20px;
+      padding:16px;
+      background:#fff;
     }
     .box h3{
-      margin:0 0 10px;
-      font-size:14px;
+      margin:0 0 8px;
+      font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
-    }
-    .box p{
-      margin:0 0 14px;
-      font-size:14px;
+      font-weight:900;
       color:var(--muted);
+    }
+    .infoLine{
+      margin:10px 0 0;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:-.2px;
+    }
+    .subLine{
+      margin:4px 0 0;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.5;
     }
 
     /* FORM */
-    form{display:grid;gap:10px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    form{display:grid;gap:10px;margin-top:10px}
+    .row{display:grid;grid-template-columns:1fr;gap:10px}
     input,textarea{
       padding:12px;
       border:1px solid var(--line);
-      font-size:14px;
       width:100%;
+      font-size:16px; /* évite le zoom iPhone */
+      outline:none;
+      border-radius:0;
+      background:#fff;
     }
-    textarea{min-height:120px}
+    textarea{min-height:140px;resize:vertical}
     button{
       background:#000;
       color:#fff;
-      padding:12px;
+      padding:14px 12px;
       border:none;
       font-size:12px;
-      font-weight:700;
+      font-weight:900;
       text-transform:uppercase;
       letter-spacing:1px;
       cursor:pointer;
+      min-height:48px;
     }
 
     /* MAP */
+    .map{
+      margin-top:14px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:#fff;
+    }
     iframe{
       width:100%;
       height:320px;
-      border:1px solid var(--line);
+      border:0;
+      display:block;
     }
 
     /* FOOTER */
     footer{
-      margin-top:40px;
+      margin-top:18px;
       border-top:1px solid var(--line);
-      padding-top:18px;
+      padding:16px 0 10px;
       display:flex;
       justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
       font-size:12px;
       color:var(--muted);
       text-transform:uppercase;
       letter-spacing:1px;
+      font-weight:800;
     }
 
-    @media(max-width:900px){
+    /* BARRE FIXE MOBILE */
+    .mobileBar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+      z-index:9999;
+    }
+    .mobileBar a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      line-height:1;
+    }
+    .mobileBar a.primary{
+      background:#000;
+      color:#fff;
+      border-color:#000;
+    }
+
+    /* Desktop */
+    @media(min-width:900px){
+      .wrap{padding:24px 18px}
+      .logo{height:220px}
+      .grid{grid-template-columns:1fr 1fr;gap:24px}
+      .row{grid-template-columns:1fr 1fr}
+      .heroBg{height:520px}
+      .heroCard{padding:34px 26px;margin-top:-90px}
+      .heroCard h1{font-size:44px}
+      .mobileBar{display:none;}
+      body{padding-bottom:0;}
+    }
+
+    /* Mobile: cache nav + espace pour barre */
+    @media(max-width:899px){
       nav{display:none}
-      .grid,.row{grid-template-columns:1fr}
-      .logo{height:180px}
-      .heroCard{
-        padding:36px 24px;
-        margin-top:120px;
-      }
-      .heroCard h1{font-size:34px}
+      body{padding-bottom:86px;}
+      .logo{height:170px}
+      .heroActions{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<header>
-  <a href="index.html">
-    <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
-  </a>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="estimation.html">Estimation</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" style="opacity:1">Contact</a>
-  </nav>
-</header>
+    <header>
+      <a href="index.html" aria-label="Accueil">
+        <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
+      </a>
 
-<!-- HERO UNIQUE -->
-<section class="hero">
-  <div class="heroBg"></div>
-  <div class="heroCard">
-    <h1>Contact</h1>
-    <p>
-      Une question ? Un renseignement ?  
-      <strong>Notre agence Rachat-Auto.fr à Laval</strong> vous répond rapidement.
-    </p>
-  </div>
-</section>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="estimation.html">Estimation</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" style="opacity:1">Contact</a>
+      </nav>
+    </header>
 
-<!-- CONTACT + FORM -->
-<section class="grid">
-  <div class="box">
-    <h3>Nous contacter</h3>
-    <p><strong>Téléphone</strong><br>02 43 67 89 00</p>
-    <p><strong>Email</strong><br>contact@rachatautolaval.fr</p>
-    <p><strong>Adresse</strong><br>
-      54 rue du Général de Gaulle<br>
-      53000 Laval
-    </p>
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroBg"></div>
 
-  <div class="box">
-    <h3>Envoyer un message</h3>
-    <form action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
-      <div class="row">
-        <input name="Nom" placeholder="Nom" required>
-        <input name="Téléphone" placeholder="Téléphone" required>
+      <div class="heroCard">
+        <h1>Contact</h1>
+        <p>
+          Une question ? Un renseignement ?<br>
+          <strong style="color:#0a0a0a">Notre agence Rachat-Auto.fr à Laval</strong> vous répond rapidement.
+        </p>
+
+        <!-- Actions rapides (mobile) -->
+        <div class="heroActions">
+          <a class="actionBtn primary" href="tel:+33243678900">Appeler</a>
+          <a class="actionBtn" href="mailto:contact@rachatautolaval.fr">Email</a>
+          <a class="actionBtn" href="https://www.google.com/maps?q=54%20rue%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2053000%20Laval" target="_blank" rel="noopener">Itinéraire</a>
+        </div>
       </div>
-      <input name="Email" placeholder="Email" required>
-      <textarea name="Message" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+    </section>
+
+    <!-- INFOS + FORM -->
+    <section class="grid">
+      <div class="box">
+        <h3>Nous contacter</h3>
+
+        <div class="infoLine"><a href="tel:+33243678900">02 43 67 89 00</a></div>
+        <div class="subLine">Lun–Sam : 8h–19h</div>
+
+        <div class="infoLine" style="margin-top:14px;"><a href="mailto:contact@rachatautolaval.fr">contact@rachatautolaval.fr</a></div>
+        <div class="subLine">Réponse rapide</div>
+
+        <div class="infoLine" style="margin-top:14px;">Bientôt disponible</div>
+        <div class="subLine">53000 Laval</div>
+      </div>
+
+      <div class="box">
+        <h3>Envoyer un message</h3>
+
+        <form action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
+          <div class="row">
+            <input name="Nom" placeholder="Nom" required>
+            <input name="Téléphone" placeholder="Téléphone" required inputmode="tel">
+          </div>
+          <input name="Email" placeholder="Email" required inputmode="email">
+          <textarea name="Message" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+
+        <div class="subLine" style="margin-top:10px;">
+          Astuce : sur certains téléphones, l’envoi “mailto” ouvre l’application email.
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map" aria-label="Carte">
+      <iframe
+        src="https://www.google.com/maps?q=54%20rue%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2053000%20Laval&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <footer>
+      <div>© Rachat Auto Laval</div>
+      <div><a href="faq.html">FAQ</a> • Mentions légales</div>
+    </footer>
+
   </div>
-</section>
 
-<!-- MAP -->
-<section style="margin-top:24px">
-  <iframe
-    src="https://www.google.com/maps?q=54%20rue%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2053000%20Laval&output=embed"
-    loading="lazy">
-  </iframe>
-</section>
-
-<footer>
-  <div>© Rachat Auto Laval</div>
-  <div>FAQ • Mentions légales</div>
-</footer>
-
-</div>
+  <!-- BARRE FIXE MOBILE -->
+  <div class="mobileBar" aria-label="Actions rapides">
+    <a href="tel:+33243000000">Appeler</a>
+    <a class="primary" href="estimation.html">Estimation</a>
+    <a href="https://calendly.com/rachatautolaval" target="_blank" rel="noopener">RDV</a>
+  </div>
 </body>
 </html>
