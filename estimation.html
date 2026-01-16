@@ -23,6 +23,43 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
+/* HERO ESTIMATION */
+.hero{
+  position:relative;
+  margin-top:20px;
+}
+
+.heroBg{
+  height:260px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.40)),
+    url("hero-estimation.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.heroCard{
+  margin:-120px auto 0;
+  background:rgba(255,255,255,.94);
+  width:min(980px, 92%);
+  padding:26px 22px;
+  text-align:center;
+  border:1px solid rgba(0,0,0,.15);
+}
+
+.heroCard h1{
+  margin:0 0 10px;
+  font-size:34px;
+  font-weight:700;
+}
+
+.heroCard p{
+  margin:0;
+  font-size:16px;
+  line-height:1.6;
+  color:#333;
+}
 
     /* ===== HEADER (HARMONISÉ ACCUEIL) ===== */
     header{
@@ -71,6 +108,18 @@
       color:#fff;
       border-color:#000;
     }
+<!-- HERO ESTIMATION -->
+<section class="hero">
+  <div class="heroBg"></div>
+
+  <div class="heroCard">
+    <h1>Estimation gratuite</h1>
+    <p>
+      Obtenez une estimation claire et rapide de votre véhicule.<br>
+      Sans engagement • Réponse rapide • Service local à Laval
+    </p>
+  </div>
+</section>
 
     /* TITRE PAGE */
     .hero{
@@ -234,6 +283,24 @@
 
 <body>
   <div class="wrap">
+@media(max-width:900px){
+  .heroBg{
+    height:200px;
+  }
+
+  .heroCard{
+    margin:-90px auto 0;
+    padding:20px 16px;
+  }
+
+  .heroCard h1{
+    font-size:26px;
+  }
+
+  .heroCard p{
+    font-size:14px;
+  }
+}
 
     <header>
       <a href="index.html" aria-label="Accueil">
