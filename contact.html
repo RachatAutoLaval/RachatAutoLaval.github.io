@@ -74,16 +74,21 @@
       align-items:center;
       justify-content:center;
     }
-    .heroBg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.22)),
-        url('agence-rachat-auto.jpg');
-      background-size:cover;
-      background-position:center 20%; /* remonte pour voir Rachat-Auto.fr */
-      filter:contrast(1.04) brightness(1.03);
+  .heroBg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.10),
+      rgba(0,0,0,0.35)
+    ),
+    url('agence-rachat-auto.jpg');
+  background-size:cover;
+  background-position:center 20%;
+  background-repeat:no-repeat;
     }
+
     .heroCard{
       position:relative;
       background:rgba(255,255,255,.92);
