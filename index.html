@@ -35,22 +35,28 @@
       border-bottom:1px solid var(--line);
     }
     .logo{
-      height:160px; /* LOGO TRÈS GRAND */
+      height:165px; /* LOGO XXL */
       width:auto;
       display:block;
     }
     nav{
       display:flex;
       gap:26px;
+      align-items:center;
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
       font-weight:600;
+      white-space:nowrap;
     }
     nav a{opacity:.7}
     nav a:hover{opacity:1}
 
+    .actions{display:flex;gap:10px;align-items:center;white-space:nowrap}
     .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:10px 18px;
       border:1px solid var(--line);
       background:#fff;
@@ -58,6 +64,7 @@
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:1px;
+      line-height:1;
       cursor:pointer;
     }
     .btnPrimary{
@@ -103,27 +110,33 @@
       font-size:38px;
       font-weight:600;
       letter-spacing:-.3px;
+      line-height:1.1;
     }
     .subtitle{
       margin:0;
       color:var(--muted);
       font-size:16px;
       max-width:64ch;
+      line-height:1.5;
+      font-weight:500;
     }
     .heroActions{display:flex;gap:10px;flex-wrap:wrap}
 
-    /* TITRES */
+    /* SECTION TITLES */
     .sectionTitle{
-      margin:44px 0 12px;
+      margin:44px 0 10px;
       text-align:center;
       font-size:20px;
       font-weight:700;
+      letter-spacing:-.2px;
     }
     .sectionHint{
       margin:0 0 16px;
       text-align:center;
       color:var(--muted);
+      font-weight:500;
       font-size:14px;
+      line-height:1.5;
     }
 
     /* PANELS */
@@ -131,11 +144,12 @@
       display:grid;
       grid-template-columns:1.1fr .9fr;
       gap:22px;
+      align-items:stretch;
     }
     .panel{
       border:1px solid var(--line);
-      padding:18px;
       background:#fff;
+      padding:18px;
     }
     .panel h3{
       margin:0 0 6px;
@@ -147,8 +161,57 @@
     .panel p{
       margin:0 0 14px;
       color:var(--muted);
+      font-weight:500;
       font-size:14px;
+      line-height:1.55;
     }
+
+    /* MINI ESTIMATION */
+    .miniForm{display:grid;gap:10px;margin-top:10px}
+    .miniRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,select,textarea{
+      padding:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-size:14px;
+      outline:none;
+      border-radius:0;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .miniCta{width:100%;margin-top:6px}
+    .miniNote{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      font-weight:600;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    /* COMMENT ÇA MARCHE */
+    .steps{display:grid;gap:14px;margin-top:10px}
+    .step{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:12px;
+      align-items:flex-start;
+      border-top:1px solid var(--line);
+      padding-top:12px;
+    }
+    .step:first-child{border-top:none;padding-top:0}
+    .stepNum{
+      width:28px;height:28px;
+      border:1px solid #000;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;
+      font-size:12px;
+    }
+    .step b{display:block;font-weight:800;margin-bottom:4px;font-size:14px}
+    .step span{color:var(--muted);font-weight:500;font-size:14px;line-height:1.5}
 
     /* RDV */
     .calBox{
@@ -161,90 +224,195 @@
       height:760px;
     }
 
+    /* CONTACT */
+    .contactGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    /* FOOTER */
     footer{
       margin-top:52px;
       border-top:1px solid var(--line);
-      padding:18px 0;
+      padding:18px 0 10px;
       display:flex;
       justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
       color:var(--muted);
-      flex-wrap:wrap;
     }
 
     @media(max-width:980px){
       nav{display:none}
-      .logo{height:120px}
+      .wrap{padding:22px 16px}
+      .logo{height:125px}
       .heroIn{flex-direction:column;align-items:flex-start}
-      .grid2{grid-template-columns:1fr}
       h1{font-size:32px}
+      .grid2{grid-template-columns:1fr}
+      .miniRow{grid-template-columns:1fr}
+      .contactGrid{grid-template-columns:1fr}
       .calendly-inline-widget{height:820px}
     }
   </style>
 </head>
 
 <body>
-<div class="wrap" id="top">
+  <div class="wrap" id="top">
 
-<header>
-  <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
-  <nav>
-    <a href="#top">Accueil</a>
-    <a href="#rdv">Rendez-vous</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="btn btnPrimary" href="#rdv">Prendre RDV</a>
-</header>
+    <header>
+      <a href="index.html" aria-label="Accueil">
+        <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
+      </a>
 
-<section class="hero">
-  <div class="heroBg"></div>
-  <div class="heroIn">
-    <div>
-      <h1>Rachat de voiture à Laval</h1>
-      <p class="subtitle">Estimation gratuite • Sans engagement • Service local en Mayenne</p>
-    </div>
-    <div class="heroActions">
-      <a class="btn btnPrimary" href="#rdv">Prendre RDV</a>
-      <a class="btn" href="#contact">Contact</a>
-    </div>
+      <nav>
+        <a href="#top">Accueil</a>
+        <a href="#estimation">Estimation</a>
+        <a href="#rdv">Rendez-vous</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="#rdv">Prendre RDV</a>
+        <a class="btn btnPrimary" href="#estimation">Estimation gratuite</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Bandeau">
+      <div class="heroBg" aria-hidden="true"></div>
+
+      <div class="heroIn">
+        <div>
+          <h1>Rachat de voiture à Laval</h1>
+          <p class="subtitle">
+            Estimation gratuite • Sans engagement • Réponse rapide • Service local Mayenne (53)
+          </p>
+        </div>
+
+        <div class="heroActions">
+          <a class="btn btnPrimary" href="#estimation">Commencer</a>
+          <a class="btn" href="#rdv">RDV en ligne</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estimation + Comment ça marche -->
+    <h2 class="sectionTitle" id="estimation">Pourquoi choisir Rachat-Auto.fr ?</h2>
+    <p class="sectionHint">Une démarche simple, transparente et sécurisée.</p>
+
+    <section class="grid2" aria-label="Estimation et fonctionnement">
+      <div class="panel">
+        <h3>Estimation gratuite & sans engagement</h3>
+        <p>Obtenez une offre rapide et sans obligation pour votre véhicule.</p>
+
+        <form class="miniForm" action="#rdv" method="get">
+          <select name="marque" required>
+            <option value="" selected disabled>Marque</option>
+            <option>Peugeot</option>
+            <option>Renault</option>
+            <option>Citroën</option>
+            <option>Volkswagen</option>
+            <option>BMW</option>
+            <option>Audi</option>
+            <option>Mercedes</option>
+            <option>Autre</option>
+          </select>
+
+          <div class="miniRow">
+            <input name="modele" placeholder="Modèle" required>
+            <input name="annee" placeholder="Année" inputmode="numeric" required>
+          </div>
+
+          <input name="cp" placeholder="Code postal" inputmode="numeric" required>
+
+          <button class="btn btnPrimary miniCta" type="submit">Commencer mon estimation</button>
+
+          <div class="miniNote">
+            <span>Gratuit</span>
+            <span>Sans engagement</span>
+            <span>Réponse rapide</span>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>Comment ça marche ?</h3>
+        <p>3 étapes simples pour vendre votre voiture.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="stepNum">1</div>
+            <div>
+              <b>Estimation en ligne</b>
+              <span>Renseignez les informations de votre véhicule.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="stepNum">2</div>
+            <div>
+              <b>Offre claire & transparente</b>
+              <span>Recevez une proposition de rachat sans surprise.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="stepNum">3</div>
+            <div>
+              <b>Paiement rapide & sécurisé</b>
+              <span>Finalisation simple, accompagnement et paiement sécurisé.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RDV -->
+    <h2 class="sectionTitle" id="rdv">Réserver un créneau</h2>
+    <p class="sectionHint">Choisissez l’horaire qui vous convient. Confirmation immédiate.</p>
+
+    <section class="calBox" aria-label="Rendez-vous">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/rachatautolaval"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <h2 class="sectionTitle" id="contact">Contact</h2>
+    <p class="sectionHint">Appelez-nous ou envoyez un message.</p>
+
+    <section class="contactGrid" aria-label="Contact">
+      <div class="panel">
+        <h3>Téléphone</h3>
+        <p>Du lundi au samedi, 8h–19h</p>
+        <a class="btn btnPrimary" href="tel:0243678900">02 43 67 89 00</a>
+      </div>
+
+      <div class="panel">
+        <h3>Envoyer un message</h3>
+        <p>Réponse rapide. Indiquez votre véhicule et vos disponibilités.</p>
+
+        <!-- Remplace contact@exemple.fr par ton email -->
+        <form class="miniForm" action="mailto:contact@exemple.fr" method="post" enctype="text/plain">
+          <div class="miniRow">
+            <input name="Nom" placeholder="Nom" required>
+            <input name="Téléphone" placeholder="Téléphone" required>
+          </div>
+          <input name="Email" placeholder="Email" required>
+          <textarea name="Message" placeholder="Votre message" required></textarea>
+          <button class="btn btnPrimary" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Rachat Auto Laval</div>
+      <div>Mentions légales • Confidentialité</div>
+    </footer>
+
   </div>
-</section>
 
-<h2 class="sectionTitle" id="rdv">Réserver un créneau</h2>
-<p class="sectionHint">Choisissez l’horaire qui vous convient. Confirmation immédiate.</p>
-
-<section class="calBox">
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/rachatautolaval">
-  </div>
-</section>
-
-<h2 class="sectionTitle" id="contact">Contact</h2>
-<p class="sectionHint">Une question ? Appelez-nous ou écrivez-nous.</p>
-
-<section class="grid2">
-  <div class="panel">
-    <h3>Téléphone</h3>
-    <p>Du lundi au samedi, 8h–19h</p>
-    <a class="btn btnPrimary" href="tel:0243678900">02 43 67 89 00</a>
-  </div>
-
-  <div class="panel">
-    <h3>Email</h3>
-    <p>Réponse rapide garantie</p>
-    <a class="btn" href="mailto:contact@rachatautolaval.fr">contact@rachatautolaval.fr</a>
-  </div>
-</section>
-
-<footer>
-  <div>© Rachat Auto Laval</div>
-  <div>Mentions légales • Confidentialité</div>
-</footer>
-
-</div>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
