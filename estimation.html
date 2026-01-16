@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Estimation gratuite – Rachat Auto Laval</title>
-  <meta name="description" content="Estimation gratuite pour votre véhicule à Laval. Sans engagement, réponse rapide.">
+  <meta name="description" content="Estimation gratuite pour votre véhicule à Laval. Formulaire complet : état, entretien, options, défauts, documents.">
 
   <style>
     :root{
@@ -12,7 +12,6 @@
       --muted:#6b7280;
       --bg:#ffffff;
       --line:rgba(10,10,10,.14);
-      --brand:#000;
       --max:1200px;
     }
     *{box-sizing:border-box}
@@ -25,7 +24,7 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px}
 
-    /* HEADER (même thème) */
+    /* HEADER */
     header{
       display:flex;
       align-items:center;
@@ -35,7 +34,7 @@
       border-bottom:1px solid var(--line);
     }
     .logo{
-      height:170px;
+      height:180px; /* cohérent avec ton site */
       width:auto;
       display:block;
     }
@@ -72,7 +71,7 @@
       border-color:#000;
     }
 
-    /* HERO SIMPLE */
+    /* TITRE PAGE */
     .hero{
       margin-top:18px;
       border:1px solid var(--line);
@@ -82,10 +81,11 @@
       justify-content:space-between;
       align-items:flex-end;
       gap:16px;
+      flex-wrap:wrap;
     }
     .heroTitle{
       margin:0 0 8px;
-      font-size:34px;
+      font-size:32px;
       font-weight:650;
       letter-spacing:-.3px;
       line-height:1.1;
@@ -95,51 +95,38 @@
       color:var(--muted);
       font-size:15px;
       line-height:1.55;
-      max-width:70ch;
+      max-width:74ch;
       font-weight:500;
     }
 
-    /* GRID */
-    .grid2{
+    /* FORM LAYOUT */
+    form{
       margin-top:18px;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:22px;
-      align-items:start;
-    }
-
-    .panel{
       border:1px solid var(--line);
       background:#fff;
       padding:18px;
     }
-    .panel h3{
-      margin:0 0 6px;
-      font-size:14px;
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:14px;
+    }
+    .full{grid-column:1 / -1}
+    label{
+      display:block;
+      font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
       font-weight:800;
+      margin:0 0 6px;
     }
-    .panel p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-weight:500;
-      font-size:14px;
-      line-height:1.55;
-    }
-
-    /* FORM */
-    .form{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .row2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-    input,select,textarea{
+    input, select, textarea{
+      width:100%;
       padding:12px;
       border:1px solid var(--line);
       background:#fff;
@@ -147,57 +134,77 @@
       outline:none;
       border-radius:0;
     }
-    textarea{min-height:110px;resize:vertical}
+    textarea{min-height:120px;resize:vertical}
+
+    .sectionTitle{
+      margin:22px 0 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-weight:900;
+    }
+    .hint{
+      margin:-4px 0 12px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      font-weight:500;
+    }
+    .sep{
+      margin:18px 0;
+      border:none;
+      border-top:1px solid var(--line);
+    }
+
+    /* Radios (oui/non) */
+    .yn{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      border:1px solid var(--line);
+      padding:10px 12px;
+    }
+    .yn label{
+      margin:0;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .yn .opt{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      font-size:14px;
+      font-weight:600;
+      text-transform:none;
+      letter-spacing:0;
+    }
+    .yn input{width:auto}
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      margin-top:16px;
+    }
 
     .note{
-      margin-top:10px;
-      font-size:12px;
+      margin-top:12px;
       color:var(--muted);
+      font-size:12px;
       text-transform:uppercase;
       letter-spacing:.7px;
       font-weight:650;
       display:flex;
       gap:10px;
-      justify-content:flex-start;
       flex-wrap:wrap;
     }
 
-    /* STEPS */
-    .steps{display:grid;gap:14px;margin-top:10px}
-    .step{
-      display:grid;
-      grid-template-columns:28px 1fr;
-      gap:12px;
-      align-items:flex-start;
-      border-top:1px solid var(--line);
-      padding-top:12px;
-    }
-    .step:first-child{border-top:none;padding-top:0}
-    .stepNum{
-      width:28px;height:28px;
-      border:1px solid #000;
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;
-      font-size:12px;
-    }
-    .step b{display:block;font-weight:800;margin-bottom:4px;font-size:14px}
-    .step span{color:var(--muted);font-weight:500;font-size:14px;line-height:1.5}
-
-    /* RDV */
-    .calBox{
-      margin-top:22px;
-      border:1px solid var(--line);
-      background:#fff;
-      overflow:hidden;
-    }
-    .calendly-inline-widget{
-      min-width:320px;
-      height:760px;
-    }
-
-    /* FOOTER */
     footer{
-      margin-top:40px;
+      margin-top:32px;
       border-top:1px solid var(--line);
       padding:18px 0 10px;
       display:flex;
@@ -210,16 +217,14 @@
       color:var(--muted);
     }
 
-    /* MOBILE */
     @media(max-width:980px){
       nav{display:none}
       .wrap{padding:22px 16px}
-      .logo{height:130px}
-      .hero{flex-direction:column;align-items:flex-start}
-      .heroTitle{font-size:30px}
-      .grid2{grid-template-columns:1fr}
-      .row2{grid-template-columns:1fr}
-      .calendly-inline-widget{height:820px}
+      .logo{height:135px}
+      .grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .actions{justify-content:stretch}
+      .actions .btn{width:100%}
     }
   </style>
 </head>
@@ -235,125 +240,338 @@
       <nav>
         <a href="index.html">Accueil</a>
         <a href="estimation.html" style="opacity:1;">Estimation</a>
-        <a href="index.html#rdv">Rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
-      <a class="btn btnPrimary" href="index.html#rdv">Prendre RDV</a>
+      <a class="btn" href="index.html">Retour accueil</a>
     </header>
 
-    <section class="hero" aria-label="Titre estimation">
+    <section class="hero">
       <div>
-        <h1 class="heroTitle">Estimation gratuite</h1>
+        <h1 class="heroTitle">Estimation gratuite – formulaire complet</h1>
         <p class="subtitle">
-          Remplissez les informations de votre véhicule. Nous vous contactons rapidement avec une proposition claire.
+          Remplissez les informations ci-dessous. Plus c’est précis, plus l’estimation sera juste.
         </p>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btnPrimary" href="#form">Commencer</a>
+    </section>
+
+    <!-- IMPORTANT : Remplace l'email ci-dessous si besoin -->
+    <form id="form" action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
+
+      <div class="sectionTitle">Coordonnées</div>
+      <p class="hint">Pour vous recontacter rapidement.</p>
+
+      <div class="grid">
+        <div>
+          <label for="nom">Nom</label>
+          <input id="nom" name="Nom" required placeholder="Votre nom">
+        </div>
+        <div>
+          <label for="tel">Téléphone</label>
+          <input id="tel" name="Téléphone" required placeholder="06..." inputmode="tel">
+        </div>
+        <div class="full">
+          <label for="email">Email</label>
+          <input id="email" name="Email" required placeholder="email@exemple.com" inputmode="email">
+        </div>
+        <div>
+          <label for="cp">Code postal</label>
+          <input id="cp" name="Code postal" required placeholder="53000" inputmode="numeric">
+        </div>
+        <div>
+          <label for="ville">Ville</label>
+          <input id="ville" name="Ville" placeholder="Laval">
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">Véhicule</div>
+      <p class="hint">Informations principales.</p>
+
+      <div class="grid3">
+        <div>
+          <label for="marque">Marque</label>
+          <input id="marque" name="Marque" required placeholder="Peugeot, Renault...">
+        </div>
+        <div>
+          <label for="modele">Modèle</label>
+          <input id="modele" name="Modèle" required placeholder="308, Clio...">
+        </div>
+        <div>
+          <label for="version">Version / Finition</label>
+          <input id="version" name="Version / Finition" placeholder="Allure, Intens...">
+        </div>
+
+        <div>
+          <label for="annee">Année</label>
+          <input id="annee" name="Année" required placeholder="2019" inputmode="numeric">
+        </div>
+        <div>
+          <label for="km">Kilométrage</label>
+          <input id="km" name="Kilométrage" required placeholder="85000" inputmode="numeric">
+        </div>
+        <div>
+          <label for="energie">Énergie</label>
+          <select id="energie" name="Énergie" required>
+            <option value="" selected disabled>Choisir</option>
+            <option>Essence</option>
+            <option>Diesel</option>
+            <option>Hybride</option>
+            <option>Électrique</option>
+            <option>GPL</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="boite">Boîte</label>
+          <select id="boite" name="Boîte" required>
+            <option value="" selected disabled>Choisir</option>
+            <option>Manuelle</option>
+            <option>Automatique</option>
+            <option>Semi-auto</option>
+          </select>
+        </div>
+        <div>
+          <label for="portes">Nombre de portes</label>
+          <select id="portes" name="Portes">
+            <option value="" selected>—</option>
+            <option>3</option><option>5</option>
+          </select>
+        </div>
+        <div>
+          <label for="couleur">Couleur</label>
+          <input id="couleur" name="Couleur" placeholder="Noir, gris...">
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="full">
+        <label for="immat">Immatriculation (optionnel)</label>
+        <input id="immat" name="Immatriculation (optionnel)" placeholder="AA-123-AA">
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">État extérieur</div>
+      <p class="hint">Carrosserie, peinture, jantes, vitrage.</p>
+
+      <div class="grid">
+        <div>
+          <label for="carrosserie">État carrosserie</label>
+          <select id="carrosserie" name="État carrosserie" required>
+            <option value="" selected disabled>Choisir</option>
+            <option>Très bon (aucun défaut notable)</option>
+            <option>Bon (micro-rayures, petites traces)</option>
+            <option>Moyen (rayures/impacts visibles)</option>
+            <option>À reprendre (bosses, éléments à repeindre)</option>
+          </select>
+        </div>
+        <div>
+          <label for="peinture">État peinture</label>
+          <select id="peinture" name="État peinture">
+            <option value="" selected>—</option>
+            <option>Très bon</option>
+            <option>Bon</option>
+            <option>Moyen</option>
+            <option>À reprendre</option>
+          </select>
+        </div>
+        <div>
+          <label for="jantes">État jantes/pneus</label>
+          <select id="jantes" name="État jantes/pneus">
+            <option value="" selected>—</option>
+            <option>Très bon</option>
+            <option>Bon</option>
+            <option>Moyen</option>
+            <option>À remplacer</option>
+          </select>
+        </div>
+        <div>
+          <label for="vitrage">État vitrage</label>
+          <select id="vitrage" name="État vitrage">
+            <option value="" selected>—</option>
+            <option>OK</option>
+            <option>Impact/fissure</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="defauts-ext">Détails défauts extérieurs (si besoin)</label>
+          <textarea id="defauts-ext" name="Détails défauts extérieurs" placeholder="Ex : rayure pare-chocs arrière, jante AVG marquée..."></textarea>
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">État intérieur</div>
+      <p class="hint">Sellerie, tableau de bord, odeurs, usure.</p>
+
+      <div class="grid">
+        <div>
+          <label for="interieur">État intérieur</label>
+          <select id="interieur" name="État intérieur" required>
+            <option value="" selected disabled>Choisir</option>
+            <option>Très bon</option>
+            <option>Bon</option>
+            <option>Moyen</option>
+            <option>À reprendre</option>
+          </select>
+        </div>
+        <div>
+          <label for="sellerie">Sellerie</label>
+          <select id="sellerie" name="Sellerie">
+            <option value="" selected>—</option>
+            <option>Tissu</option>
+            <option>Cuir</option>
+            <option>Alcantara</option>
+            <option>Mixte</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="defauts-int">Détails défauts intérieurs</label>
+          <textarea id="defauts-int" name="Détails défauts intérieurs" placeholder="Ex : siège conducteur usé, plastiques rayés..."></textarea>
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">Mécanique & défauts</div>
+      <p class="hint">Voyants, bruits, pannes, entretien.</p>
+
+      <div class="grid">
+        <div class="yn">
+          <label>Défaut moteur / voyant moteur ?</label>
+          <span class="opt"><input type="radio" name="Défaut moteur" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Défaut moteur" value="Non"> Non</span>
+        </div>
+
+        <div class="yn">
+          <label>Véhicule roulant ?</label>
+          <span class="opt"><input type="radio" name="Véhicule roulant" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Véhicule roulant" value="Non"> Non</span>
+        </div>
+
+        <div class="yn">
+          <label>Contrôle technique OK ?</label>
+          <span class="opt"><input type="radio" name="Contrôle technique OK" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Contrôle technique OK" value="Non"> Non</span>
+        </div>
+
+        <div>
+          <label for="ct-date">Date du dernier CT (optionnel)</label>
+          <input id="ct-date" name="Date dernier CT" placeholder="MM/AAAA">
+        </div>
+
+        <div class="full">
+          <label for="defauts-mec">Détails défauts mécaniques</label>
+          <textarea id="defauts-mec" name="Détails défauts mécaniques" placeholder="Ex : bruit au freinage, voyant ABS, fuite, clim HS..."></textarea>
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">Documents & historique</div>
+      <p class="hint">Factures, carnet, clés, provenance.</p>
+
+      <div class="grid">
+        <div class="yn">
+          <label>Factures d’entretien disponibles ?</label>
+          <span class="opt"><input type="radio" name="Factures entretien" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Factures entretien" value="Non"> Non</span>
+        </div>
+
+        <div class="yn">
+          <label>Carnet d’entretien ?</label>
+          <span class="opt"><input type="radio" name="Carnet entretien" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Carnet entretien" value="Non"> Non</span>
+        </div>
+
+        <div class="yn">
+          <label>Double de clé ?</label>
+          <span class="opt"><input type="radio" name="Double de clé" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Double de clé" value="Non"> Non</span>
+        </div>
+
+        <div class="yn">
+          <label>Véhicule déjà accidenté ?</label>
+          <span class="opt"><input type="radio" name="Déjà accidenté" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Déjà accidenté" value="Non"> Non</span>
+        </div>
+
+        <div class="full">
+          <label for="hist">Détails historique / entretien</label>
+          <textarea id="hist" name="Historique / entretien" placeholder="Ex : distribution faite à 120 000 km, pneus récents, révisions à jour..."></textarea>
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">Options (si vous savez)</div>
+      <p class="hint">Cochez ce qui est présent sur votre véhicule.</p>
+
+      <div class="grid">
+        <div class="yn">
+          <label>GPS / écran</label>
+          <span class="opt"><input type="radio" name="GPS / écran" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="GPS / écran" value="Non"> Non</span>
+        </div>
+        <div class="yn">
+          <label>Caméra de recul</label>
+          <span class="opt"><input type="radio" name="Caméra de recul" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Caméra de recul" value="Non"> Non</span>
+        </div>
+        <div class="yn">
+          <label>Radar de recul</label>
+          <span class="opt"><input type="radio" name="Radar de recul" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Radar de recul" value="Non"> Non</span>
+        </div>
+        <div class="yn">
+          <label>Climatisation</label>
+          <span class="opt"><input type="radio" name="Climatisation" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Climatisation" value="Non"> Non</span>
+        </div>
+        <div class="yn">
+          <label>Toit ouvrant</label>
+          <span class="opt"><input type="radio" name="Toit ouvrant" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Toit ouvrant" value="Non"> Non</span>
+        </div>
+        <div class="yn">
+          <label>Régulateur / limiteur</label>
+          <span class="opt"><input type="radio" name="Régulateur / limiteur" value="Oui" required> Oui</span>
+          <span class="opt"><input type="radio" name="Régulateur / limiteur" value="Non"> Non</span>
+        </div>
+
+        <div class="full">
+          <label for="opts">Autres options (optionnel)</label>
+          <input id="opts" name="Autres options" placeholder="Ex : sièges chauffants, pack sport...">
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <div class="sectionTitle">Remarques</div>
+      <p class="hint">Toute information utile.</p>
+
+      <div class="grid">
+        <div class="full">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="Message" placeholder="Votre disponibilité, urgence, attentes de prix, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
         <a class="btn" href="index.html">Retour accueil</a>
-        <a class="btn btnPrimary" href="#form">Commencer</a>
-      </div>
-    </section>
-
-    <section class="grid2" aria-label="Formulaire estimation">
-      <!-- FORMULAIRE -->
-      <div class="panel" id="form">
-        <h3>Informations véhicule</h3>
-        <p>Indiquez un maximum d’éléments pour une estimation plus précise.</p>
-
-        <!-- VERSION SIMPLE (sans back-end) :
-             1) soit tu utilises mailto (ouvre le client mail)
-             2) soit tu me dis si tu veux un vrai formulaire (Formspree gratuit) -->
-        <form class="form" action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
-          <div class="row2">
-            <select name="Marque" required>
-              <option value="" selected disabled>Marque</option>
-              <option>Peugeot</option>
-              <option>Renault</option>
-              <option>Citroën</option>
-              <option>Volkswagen</option>
-              <option>BMW</option>
-              <option>Audi</option>
-              <option>Mercedes</option>
-              <option>Autre</option>
-            </select>
-
-            <input name="Modèle" placeholder="Modèle" required>
-          </div>
-
-          <div class="row2">
-            <input name="Année" placeholder="Année" inputmode="numeric" required>
-            <input name="Kilométrage" placeholder="Kilométrage" inputmode="numeric">
-          </div>
-
-          <div class="row2">
-            <input name="Code postal" placeholder="Code postal" inputmode="numeric" required>
-            <input name="Ville" placeholder="Ville">
-          </div>
-
-          <div class="row2">
-            <input name="Nom" placeholder="Nom" required>
-            <input name="Téléphone" placeholder="Téléphone" required>
-          </div>
-
-          <input name="Email" placeholder="Email" required>
-
-          <textarea name="Détails" placeholder="Ex : finition, options, état général, entretien, pneus, etc."></textarea>
-
-          <button class="btn btnPrimary" type="submit">Envoyer ma demande</button>
-
-          <div class="note">
-            <span>Gratuit</span>
-            <span>Sans engagement</span>
-            <span>Réponse rapide</span>
-          </div>
-        </form>
+        <button class="btn btnPrimary" type="submit">Envoyer la demande</button>
       </div>
 
-      <!-- COMMENT ÇA MARCHE -->
-      <div class="panel">
-        <h3>Comment ça marche ?</h3>
-        <p>Un process simple, transparent et sécurisé.</p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="stepNum">1</div>
-            <div>
-              <b>Vous remplissez le formulaire</b>
-              <span>Informations essentielles pour estimer votre véhicule.</span>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="stepNum">2</div>
-            <div>
-              <b>Vous recevez une offre</b>
-              <span>Proposition claire, sans surprise, adaptée à votre véhicule.</span>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="stepNum">3</div>
-            <div>
-              <b>Vous finalisez en toute sécurité</b>
-              <span>RDV à l’agence, démarches simplifiées, paiement sécurisé.</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btnPrimary" href="index.html#rdv">Prendre RDV</a>
-          <a class="btn" href="tel:0243678900">Appeler</a>
-        </div>
+      <div class="note">
+        <span>Gratuit</span>
+        <span>Sans engagement</span>
+        <span>Réponse rapide</span>
       </div>
-    </section>
-
-    <h2 style="margin:44px 0 10px;text-align:center;font-size:20px;font-weight:750;">Ou réserver un créneau</h2>
-    <p style="margin:0 0 16px;text-align:center;color:var(--muted);font-size:14px;">Si vous préférez, prenez rendez-vous directement en ligne.</p>
-
-    <section class="calBox" aria-label="Calendly">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/rachatautolaval"></div>
-    </section>
+    </form>
 
     <footer>
       <div>© Rachat Auto Laval</div>
@@ -361,7 +579,5 @@
     </footer>
 
   </div>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
