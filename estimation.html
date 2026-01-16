@@ -4,670 +4,266 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Estimation gratuite – Rachat Auto Laval</title>
-  <meta name="description" content="Estimation gratuite pour votre véhicule à Laval. Formulaire complet : état, entretien, options, défauts, documents.">
 
   <style>
     :root{
       --text:#0a0a0a;
       --muted:#6b7280;
-      --bg:#ffffff;
       --line:rgba(0,0,0,.15);
       --max:1200px;
     }
     *{box-sizing:border-box}
-    <div class="mobileBar" aria-label="Actions rapides">
-  <a href="faq.html">FAQ</a>
-  <a class="primary" href="tel:+33243678900">Appeler</a>
-  <a href="contact.html">Contact</a>
-</div>
-
     body{
       margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:var(--bg);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:#fff;
       color:var(--text);
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
-/* ===== BARRE FIXE MOBILE (ESTIMATION) ===== */
-.mobileBar{
-  position:fixed;
-  left:0; right:0; bottom:0;
-  background:#fff;
-  border-top:1px solid var(--line);
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:10px;
-  z-index:9999;
-}
-.mobileBar a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  border:1px solid var(--line);
-  background:#fff;
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  line-height:1;
-}
-.mobileBar a.primary{
-  background:#000;
-  color:#fff;
-  border-color:#000;
-}
-
-/* évite que la barre cache le bas du formulaire */
-@media(max-width:900px){
-  body{padding-bottom:86px;}
-}
-@media(min-width:901px){
-  .mobileBar{display:none;}
-  body{padding-bottom:0;}
-}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px 14px}
 
     /* ===== HEADER ===== */
     header{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:18px;
-      padding:0 0 18px;
+      align-items:center;
       border-bottom:1px solid var(--line);
-      background:#fff;
+      padding-bottom:14px;
     }
-    .brand{display:flex; align-items:center;}
     .logo{
-      height:360px;
+      height:190px;
       width:auto;
       display:block;
     }
     nav{
       display:flex;
       gap:26px;
-      align-items:center;
       font-size:12px;
+      font-weight:800;
       text-transform:uppercase;
       letter-spacing:1px;
-      font-weight:700;
-      white-space:nowrap;
     }
-    nav a{opacity:.65}
+    nav a{opacity:.6}
     nav a:hover{opacity:1}
 
     /* ===== HERO PHOTO ===== */
     .hero{
-      position:relative;
-      margin-top:20px;
+      margin-top:16px;
       border:1px solid var(--line);
       overflow:hidden;
       background:#fff;
     }
     .heroBg{
-      height:280px;
+      height:260px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45)),
+        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.45)),
         url("hero-estimation.jpg");
       background-size:cover;
       background-position:center;
-      background-repeat:no-repeat;
     }
     .heroCard{
-      margin:-105px auto 18px;
+      margin:-95px auto 14px;
       background:rgba(255,255,255,.94);
-      width:min(980px, 92%);
-      padding:22px 20px;
-      border:1px solid rgba(0,0,0,.15);
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
+      width:92%;
+      padding:20px 18px;
+      border:1px solid var(--line);
+      text-align:center;
     }
-    .heroTitle{
-      margin:0 0 6px;
-      font-size:34px;
-      font-weight:750;
-      letter-spacing:-.3px;
-      line-height:1.1;
+    .heroCard h1{
+      margin:0 0 8px;
+      font-size:30px;
+      font-weight:800;
     }
-    .subtitle{
+    .heroCard p{
       margin:0;
+      font-size:14px;
       color:var(--muted);
-      font-size:15px;
-      line-height:1.55;
-      max-width:74ch;
-      font-weight:500;
+      line-height:1.5;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 18px;
+    /* ===== FORM ===== */
+    form{
       border:1px solid var(--line);
+      padding:16px;
       background:#fff;
+    }
+    .sectionTitle{
+      margin:22px 0 8px;
+      font-size:13px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .hint{
+      margin:0 0 12px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .full{grid-column:1/-1}
+    label{
       font-size:12px;
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:1px;
-      line-height:1;
-      cursor:pointer;
+      display:block;
+      margin-bottom:4px;
     }
-    .btnPrimary{
+    input,select,textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid var(--line);
+      font-size:16px;
+      background:#fff;
+    }
+    textarea{min-height:120px}
+    .sep{
+      border:none;
+      border-top:1px solid var(--line);
+      margin:18px 0;
+    }
+    .yn{
+      border:1px solid var(--line);
+      padding:10px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .yn label{margin:0}
+    .actions{
+      margin-top:16px;
+    }
+    button{
+      width:100%;
+      padding:14px;
+      background:#000;
+      color:#fff;
+      border:none;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    footer{
+      margin-top:24px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      font-size:12px;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    /* ===== BARRE MOBILE ===== */
+    .mobileBar{
+      position:fixed;
+      bottom:0; left:0; right:0;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+      z-index:9999;
+    }
+    .mobileBar a{
+      border:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .mobileBar a.primary{
       background:#000;
       color:#fff;
       border-color:#000;
     }
 
-    /* ===== FORM ===== */
-    form{
-      margin-top:18px;
-      border:1px solid var(--line);
-      background:#fff;
-      padding:18px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    .grid3{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:14px;
-    }
-    .full{grid-column:1 / -1}
-    label{
-      display:block;
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      font-weight:800;
-      margin:0 0 6px;
-    }
-    input, select, textarea{
-      width:100%;
-      padding:12px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-size:14px;
-      outline:none;
-      border-radius:0;
-    }
-    textarea{min-height:120px;resize:vertical}
-
-    .sectionTitle{
-      margin:22px 0 10px;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      font-weight:900;
-    }
-    .hint{
-      margin:-4px 0 12px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-      font-weight:500;
-    }
-    .sep{
-      margin:18px 0;
-      border:none;
-      border-top:1px solid var(--line);
-    }
-
-    .yn{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      border:1px solid var(--line);
-      padding:10px 12px;
-    }
-    .yn label{
-      margin:0;
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-    .yn .opt{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      font-size:14px;
-      font-weight:600;
-      text-transform:none;
-      letter-spacing:0;
-    }
-    .yn input{width:auto}
-
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      margin-top:16px;
-    }
-
-    .note{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.7px;
-      font-weight:650;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      margin-top:32px;
-      border-top:1px solid var(--line);
-      padding:18px 0 10px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      color:var(--muted);
-    }
-
     /* ===== MOBILE ===== */
     @media(max-width:900px){
       nav{display:none}
-      .wrap{padding:18px 12px}
-
-      /* Logo centré sur mobile */
-      header{
-        justify-content:center;
-        padding-bottom:14px;
-      }
-      .brand{
-        width:100%;
-        justify-content:center;
-      }
+      header{justify-content:center}
       .logo{height:160px}
-
-      /* Hero mobile */
-      .heroBg{height:210px}
-      .heroCard{
-        margin:-75px auto 14px;
-        padding:18px 14px;
-        justify-content:center;
-        text-align:center;
-      }
-      .heroTitle{font-size:26px}
-      .subtitle{font-size:14px}
-
-      /* Grilles */
       .grid{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-
-      input,select,textarea{font-size:16px}
-      .actions{justify-content:stretch}
-      .actions .btn{width:100%}
+      body{padding-bottom:90px}
+    }
+    @media(min-width:901px){
+      .mobileBar{display:none}
+      body{padding-bottom:0}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <header>
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
-      </a>
+<header>
+  <a href="index.html">
+    <img src="logo-rachat-auto.png" class="logo" alt="Rachat Auto Laval">
+  </a>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="estimation.html" style="opacity:1">Estimation</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="estimation.html" style="opacity:1;">Estimation</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="heroBg"></div>
-      <div class="heroCard">
-        <div>
-          <h1 class="heroTitle">Estimation gratuite – formulaire complet</h1>
-          <p class="subtitle">
-            Remplissez les informations ci-dessous. Plus c’est précis, plus l’estimation sera juste.
-          </p>
-        </div>
-        <a class="btn btnPrimary" href="#form">Commencer</a>
-      </div>
-    </section>
-
-    <form id="form" action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
-
-      <div class="sectionTitle">Coordonnées</div>
-      <p class="hint">Pour vous recontacter rapidement.</p>
-
-      <div class="grid">
-        <div>
-          <label for="nom">Nom</label>
-          <input id="nom" name="Nom" required placeholder="Votre nom">
-        </div>
-        <div>
-          <label for="tel">Téléphone</label>
-          <input id="tel" name="Téléphone" required placeholder="06..." inputmode="tel">
-        </div>
-        <div class="full">
-          <label for="email">Email</label>
-          <input id="email" name="Email" required placeholder="email@exemple.com" inputmode="email">
-        </div>
-        <div>
-          <label for="cp">Code postal</label>
-          <input id="cp" name="Code postal" required placeholder="53000" inputmode="numeric">
-        </div>
-        <div>
-          <label for="ville">Ville</label>
-          <input id="ville" name="Ville" placeholder="Laval">
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">Véhicule</div>
-      <p class="hint">Informations principales.</p>
-
-      <div class="grid3">
-        <div>
-          <label for="marque">Marque</label>
-          <input id="marque" name="Marque" required placeholder="Peugeot, Renault...">
-        </div>
-        <div>
-          <label for="modele">Modèle</label>
-          <input id="modele" name="Modèle" required placeholder="308, Clio...">
-        </div>
-        <div>
-          <label for="version">Version / Finition</label>
-          <input id="version" name="Version / Finition" placeholder="Allure, Intens...">
-        </div>
-
-        <div>
-          <label for="annee">Année</label>
-          <input id="annee" name="Année" required placeholder="2019" inputmode="numeric">
-        </div>
-        <div>
-          <label for="km">Kilométrage</label>
-          <input id="km" name="Kilométrage" required placeholder="85000" inputmode="numeric">
-        </div>
-        <div>
-          <label for="energie">Énergie</label>
-          <select id="energie" name="Énergie" required>
-            <option value="" selected disabled>Choisir</option>
-            <option>Essence</option>
-            <option>Diesel</option>
-            <option>Hybride</option>
-            <option>Électrique</option>
-            <option>GPL</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="boite">Boîte</label>
-          <select id="boite" name="Boîte" required>
-            <option value="" selected disabled>Choisir</option>
-            <option>Manuelle</option>
-            <option>Automatique</option>
-            <option>Semi-auto</option>
-          </select>
-        </div>
-        <div>
-          <label for="portes">Nombre de portes</label>
-          <select id="portes" name="Portes">
-            <option value="" selected>—</option>
-            <option>3</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div>
-          <label for="couleur">Couleur</label>
-          <input id="couleur" name="Couleur" placeholder="Noir, gris...">
-        </div>
-      </div>
-
-      <div style="margin-top:14px" class="full">
-        <label for="immat">Immatriculation (optionnel)</label>
-        <input id="immat" name="Immatriculation (optionnel)" placeholder="AA-123-AA">
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">État extérieur</div>
-      <p class="hint">Carrosserie, peinture, jantes, vitrage.</p>
-
-      <div class="grid">
-        <div>
-          <label for="carrosserie">État carrosserie</label>
-          <select id="carrosserie" name="État carrosserie" required>
-            <option value="" selected disabled>Choisir</option>
-            <option>Très bon (aucun défaut notable)</option>
-            <option>Bon (micro-rayures, petites traces)</option>
-            <option>Moyen (rayures/impacts visibles)</option>
-            <option>À reprendre (bosses, éléments à repeindre)</option>
-          </select>
-        </div>
-        <div>
-          <label for="peinture">État peinture</label>
-          <select id="peinture" name="État peinture">
-            <option value="" selected>—</option>
-            <option>Très bon</option>
-            <option>Bon</option>
-            <option>Moyen</option>
-            <option>À reprendre</option>
-          </select>
-        </div>
-        <div>
-          <label for="jantes">État jantes/pneus</label>
-          <select id="jantes" name="État jantes/pneus">
-            <option value="" selected>—</option>
-            <option>Très bon</option>
-            <option>Bon</option>
-            <option>Moyen</option>
-            <option>À remplacer</option>
-          </select>
-        </div>
-        <div>
-          <label for="vitrage">État vitrage</label>
-          <select id="vitrage" name="État vitrage">
-            <option value="" selected>—</option>
-            <option>OK</option>
-            <option>Impact/fissure</option>
-          </select>
-        </div>
-
-        <div class="full">
-          <label for="defauts-ext">Détails défauts extérieurs (si besoin)</label>
-          <textarea id="defauts-ext" name="Détails défauts extérieurs" placeholder="Ex : rayure pare-chocs arrière, jante AVG marquée..."></textarea>
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">État intérieur</div>
-      <p class="hint">Sellerie, tableau de bord, odeurs, usure.</p>
-
-      <div class="grid">
-        <div>
-          <label for="interieur">État intérieur</label>
-          <select id="interieur" name="État intérieur" required>
-            <option value="" selected disabled>Choisir</option>
-            <option>Très bon</option>
-            <option>Bon</option>
-            <option>Moyen</option>
-            <option>À reprendre</option>
-          </select>
-        </div>
-        <div>
-          <label for="sellerie">Sellerie</label>
-          <select id="sellerie" name="Sellerie">
-            <option value="" selected>—</option>
-            <option>Tissu</option>
-            <option>Cuir</option>
-            <option>Alcantara</option>
-            <option>Mixte</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="defauts-int">Détails défauts intérieurs</label>
-          <textarea id="defauts-int" name="Détails défauts intérieurs" placeholder="Ex : siège conducteur usé, plastiques rayés..."></textarea>
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">Mécanique & défauts</div>
-      <p class="hint">Voyants, bruits, pannes, entretien.</p>
-
-      <div class="grid">
-        <div class="yn">
-          <label>Défaut moteur / voyant moteur ?</label>
-          <span class="opt"><input type="radio" name="Défaut moteur" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Défaut moteur" value="Non"> Non</span>
-        </div>
-
-        <div class="yn">
-          <label>Véhicule roulant ?</label>
-          <span class="opt"><input type="radio" name="Véhicule roulant" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Véhicule roulant" value="Non"> Non</span>
-        </div>
-
-        <div class="yn">
-          <label>Contrôle technique OK ?</label>
-          <span class="opt"><input type="radio" name="Contrôle technique OK" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Contrôle technique OK" value="Non"> Non</span>
-        </div>
-
-        <div>
-          <label for="ct-date">Date du dernier CT (optionnel)</label>
-          <input id="ct-date" name="Date dernier CT" placeholder="MM/AAAA">
-        </div>
-
-        <div class="full">
-          <label for="defauts-mec">Détails défauts mécaniques</label>
-          <textarea id="defauts-mec" name="Détails défauts mécaniques" placeholder="Ex : bruit au freinage, voyant ABS, fuite, clim HS..."></textarea>
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">Documents & historique</div>
-      <p class="hint">Factures, carnet, clés, provenance.</p>
-
-      <div class="grid">
-        <div class="yn">
-          <label>Factures d’entretien disponibles ?</label>
-          <span class="opt"><input type="radio" name="Factures entretien" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Factures entretien" value="Non"> Non</span>
-        </div>
-
-        <div class="yn">
-          <label>Carnet d’entretien ?</label>
-          <span class="opt"><input type="radio" name="Carnet entretien" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Carnet entretien" value="Non"> Non</span>
-        </div>
-
-        <div class="yn">
-          <label>Double de clé ?</label>
-          <span class="opt"><input type="radio" name="Double de clé" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Double de clé" value="Non"> Non</span>
-        </div>
-
-        <div class="yn">
-          <label>Véhicule déjà accidenté ?</label>
-          <span class="opt"><input type="radio" name="Déjà accidenté" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Déjà accidenté" value="Non"> Non</span>
-        </div>
-
-        <div class="full">
-          <label for="hist">Détails historique / entretien</label>
-          <textarea id="hist" name="Historique / entretien" placeholder="Ex : distribution faite à 120 000 km, pneus récents, révisions à jour..."></textarea>
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">Options (si vous savez)</div>
-      <p class="hint">Cochez ce qui est présent sur votre véhicule.</p>
-
-      <div class="grid">
-        <div class="yn">
-          <label>GPS / écran</label>
-          <span class="opt"><input type="radio" name="GPS / écran" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="GPS / écran" value="Non"> Non</span>
-        </div>
-        <div class="yn">
-          <label>Caméra de recul</label>
-          <span class="opt"><input type="radio" name="Caméra de recul" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Caméra de recul" value="Non"> Non</span>
-        </div>
-        <div class="yn">
-          <label>Radar de recul</label>
-          <span class="opt"><input type="radio" name="Radar de recul" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Radar de recul" value="Non"> Non</span>
-        </div>
-        <div class="yn">
-          <label>Climatisation</label>
-          <span class="opt"><input type="radio" name="Climatisation" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Climatisation" value="Non"> Non</span>
-        </div>
-        <div class="yn">
-          <label>Toit ouvrant</label>
-          <span class="opt"><input type="radio" name="Toit ouvrant" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Toit ouvrant" value="Non"> Non</span>
-        </div>
-        <div class="yn">
-          <label>Régulateur / limiteur</label>
-          <span class="opt"><input type="radio" name="Régulateur / limiteur" value="Oui" required> Oui</span>
-          <span class="opt"><input type="radio" name="Régulateur / limiteur" value="Non"> Non</span>
-        </div>
-
-        <div class="full">
-          <label for="opts">Autres options (optionnel)</label>
-          <input id="opts" name="Autres options" placeholder="Ex : sièges chauffants, pack sport...">
-        </div>
-      </div>
-
-      <hr class="sep">
-
-      <div class="sectionTitle">Remarques</div>
-      <p class="hint">Toute information utile.</p>
-
-      <div class="grid">
-        <div class="full">
-          <label for="msg">Message</label>
-          <textarea id="msg" name="Message" placeholder="Votre disponibilité, urgence, attentes de prix, etc."></textarea>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn btnPrimary" type="submit">Envoyer la demande</button>
-      </div>
-
-      <div class="note">
-        <span>Gratuit</span>
-        <span>Sans engagement</span>
-        <span>Réponse rapide</span>
-      </div>
-    </form>
-
-    <footer>
-      <div>© Rachat Auto Laval</div>
-      <div><a href="faq.html">FAQ</a> • <a href="contact.html">Contact</a></div>
-    </footer>
-
+<section class="hero">
+  <div class="heroBg"></div>
+  <div class="heroCard">
+    <h1>Estimation gratuite</h1>
+    <p>Formulaire complet • Sans engagement • Réponse rapide</p>
   </div>
+</section>
+
+<form>
+  <div class="sectionTitle">Coordonnées</div>
+  <div class="grid">
+    <div>
+      <label>Nom</label>
+      <input>
+    </div>
+    <div>
+      <label>Téléphone</label>
+      <input>
+    </div>
+    <div class="full">
+      <label>Email</label>
+      <input>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button>Envoyer la demande</button>
+  </div>
+</form>
+
+<footer>
+  <div>© Rachat Auto Laval</div>
+  <div>FAQ • Contact</div>
+</footer>
+
+</div>
+
+<!-- BARRE FIXE MOBILE -->
+<div class="mobileBar">
+  <a href="faq.html">FAQ</a>
+  <a class="primary" href="tel:+33243678900">Appeler</a>
+  <a href="contact.html">Contact</a>
+</div>
+
 </body>
 </html>
