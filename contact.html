@@ -48,6 +48,34 @@
     }
     nav a{opacity:.6}
     nav a:hover{opacity:1}
+@media(max-width:899px){
+  nav{
+    display:none;
+  }
+
+  header{
+    justify-content:center;   /* centre le contenu */
+  }
+
+  header a{
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+
+  .logo{
+    height:320px;             /* logo bien visible */
+    margin:0 auto;
+  }
+
+  body{
+    padding-bottom:86px; /* espace pour la barre mobile */
+  }
+
+  .heroActions{
+    grid-template-columns:1fr;
+  }
+}
 
     /* HERO */
     .hero{
