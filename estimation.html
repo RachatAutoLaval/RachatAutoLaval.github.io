@@ -23,43 +23,6 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
-/* HERO ESTIMATION */
-.hero{
-  position:relative;
-  margin-top:20px;
-}
-
-.heroBg{
-  height:260px;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.40)),
-    url("hero-estimation.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-
-.heroCard{
-  margin:-120px auto 0;
-  background:rgba(255,255,255,.94);
-  width:min(980px, 92%);
-  padding:26px 22px;
-  text-align:center;
-  border:1px solid rgba(0,0,0,.15);
-}
-
-.heroCard h1{
-  margin:0 0 10px;
-  font-size:34px;
-  font-weight:700;
-}
-
-.heroCard p{
-  margin:0;
-  font-size:16px;
-  line-height:1.6;
-  color:#333;
-}
 
     /* ===== HEADER (HARMONISÉ ACCUEIL) ===== */
     header{
@@ -72,7 +35,7 @@
       background:#fff;
     }
     .logo{
-      height:200px; /* comme l'accueil */
+      height:200px;
       width:auto;
       display:block;
     }
@@ -83,7 +46,7 @@
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
-      font-weight:700; /* comme l'accueil */
+      font-weight:700;
       white-space:nowrap;
     }
     nav a{opacity:.65}
@@ -97,7 +60,7 @@
       border:1px solid var(--line);
       background:#fff;
       font-size:12px;
-      font-weight:800; /* comme l'accueil */
+      font-weight:800;
       text-transform:uppercase;
       letter-spacing:1px;
       line-height:1;
@@ -108,35 +71,40 @@
       color:#fff;
       border-color:#000;
     }
-<!-- HERO ESTIMATION -->
-<section class="hero">
-  <div class="heroBg"></div>
 
-  <div class="heroCard">
-    <h1>Estimation gratuite</h1>
-    <p>
-      Obtenez une estimation claire et rapide de votre véhicule.<br>
-      Sans engagement • Réponse rapide • Service local à Laval
-    </p>
-  </div>
-</section>
-
-    /* TITRE PAGE */
+    /* ===== HERO PHOTO (ESTIMATION) ===== */
     .hero{
+      position:relative;
       margin-top:20px;
       border:1px solid var(--line);
+      overflow:hidden;
       background:#fff;
-      padding:22px;
+    }
+    .heroBg{
+      height:280px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45)),
+        url("hero-estimation.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+    .heroCard{
+      margin:-105px auto 18px;
+      background:rgba(255,255,255,.94);
+      width:min(980px, 92%);
+      padding:22px 20px;
+      border:1px solid rgba(0,0,0,.15);
       display:flex;
-      justify-content:space-between;
       align-items:flex-end;
-      gap:16px;
+      justify-content:space-between;
+      gap:14px;
       flex-wrap:wrap;
     }
     .heroTitle{
-      margin:0 0 8px;
-      font-size:32px;
-      font-weight:650;
+      margin:0 0 6px;
+      font-size:34px;
+      font-weight:750;
       letter-spacing:-.3px;
       line-height:1.1;
     }
@@ -149,7 +117,7 @@
       font-weight:500;
     }
 
-    /* FORM LAYOUT */
+    /* ===== FORM ===== */
     form{
       margin-top:18px;
       border:1px solid var(--line);
@@ -267,40 +235,43 @@
       color:var(--muted);
     }
 
-    /* ===== MOBILE (comme l'accueil) ===== */
+    /* ===== MOBILE ===== */
     @media(max-width:900px){
       nav{display:none}
       .wrap{padding:18px 12px}
-      .logo{height:140px}
+
+      /* logo centré sur mobile */
+      header{
+        justify-content:center;
+        padding-bottom:14px;
+      }
+      .logo{height:150px}
+
+      /* hero mobile */
+      .heroBg{height:210px}
+      .heroCard{
+        margin:-75px auto 14px;
+        padding:18px 14px;
+        justify-content:center;
+        text-align:center;
+      }
+      .heroTitle{font-size:26px}
+      .subtitle{font-size:14px}
+
+      /* grilles */
       .grid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
+
+      /* boutons et inputs */
       .actions{justify-content:stretch}
       .actions .btn{width:100%}
-      input,select,textarea{font-size:16px} /* évite le zoom iPhone */
+      input,select,textarea{font-size:16px} /* évite zoom iPhone */
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-@media(max-width:900px){
-  .heroBg{
-    height:200px;
-  }
-
-  .heroCard{
-    margin:-90px auto 0;
-    padding:20px 16px;
-  }
-
-  .heroCard h1{
-    font-size:26px;
-  }
-
-  .heroCard p{
-    font-size:14px;
-  }
-}
 
     <header>
       <a href="index.html" aria-label="Accueil">
@@ -317,17 +288,21 @@
       <a class="btn" href="index.html">Retour accueil</a>
     </header>
 
+    <!-- HERO PHOTO -->
     <section class="hero">
-      <div>
-        <h1 class="heroTitle">Estimation gratuite – formulaire complet</h1>
-        <p class="subtitle">
-          Remplissez les informations ci-dessous. Plus c’est précis, plus l’estimation sera juste.
-        </p>
+      <div class="heroBg"></div>
+      <div class="heroCard">
+        <div>
+          <h1 class="heroTitle">Estimation gratuite – formulaire complet</h1>
+          <p class="subtitle">
+            Remplissez les informations ci-dessous. Plus c’est précis, plus l’estimation sera juste.
+          </p>
+        </div>
+        <a class="btn btnPrimary" href="#form">Commencer</a>
       </div>
-      <a class="btn btnPrimary" href="#form">Commencer</a>
     </section>
 
-    <!-- IMPORTANT : Remplace l'email ci-dessous si besoin -->
+    <!-- FORM -->
     <form id="form" action="mailto:contact@rachatautolaval.fr" method="post" enctype="text/plain">
 
       <div class="sectionTitle">Coordonnées</div>
