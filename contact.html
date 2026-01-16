@@ -85,23 +85,23 @@
       overflow:hidden;
       background:#fff;
     }
-    .heroBg{
-      height:320px; /* mobile: moins haut */
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)),
-        url("agence-rachat-auto.jpg");
-      background-size:cover;
-      background-position:center 18%;
-      background-repeat:no-repeat;
-    }
-    .heroCard{
-      margin:-70px auto 0;
-      background:rgba(255,255,255,.94);
-      width:min(920px, 92%);
-      padding:22px 18px;
-      text-align:center;
-      border:1px solid rgba(0,0,0,.15);
-    }
+.heroBg{
+  height:240px; /* ↓ photo moins haute = carte plus haut */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)),
+    url("agence-rachat-auto.jpg");
+  background-size:cover;
+  background-position:center 12%;
+  background-repeat:no-repeat;
+}
+.heroCard{
+  margin:-120px auto 0; /* ↑ remonte la carte sous le logo */
+  background:rgba(255,255,255,.94);
+  width:min(920px, 92%);
+  padding:22px 18px;
+  text-align:center;
+  border:1px solid rgba(0,0,0,.15);
+}
     .heroCard h1{
       margin:0 0 10px;
       font-size:34px;
