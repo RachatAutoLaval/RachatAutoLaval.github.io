@@ -1,45 +1,30 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ — Rachat Auto</title>
-  <meta name="description" content="Questions fréquentes : reprise de véhicule, documents, paiement, procédure. Rachat Auto." />
-  <link rel="icon" href="assets/favicon.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – Rachat Auto Laval</title>
+  <meta name="description" content="Questions fréquentes sur le rachat de voiture à Laval : estimation, paiement, délais, documents, reprise.">
 
   <style>
     :root{
+      --text:#0a0a0a;
+      --muted:#6b7280;
       --bg:#ffffff;
-      --text:#0b0b0c;
-      --muted:#5f6368;
-      --line:#e8eaed;
-      --card:#fafafa;
-      --shadow: 0 10px 30px rgba(0,0,0,.06);
-      --radius:16px;
-      --radius-sm:12px;
-      --max:1100px;
+      --line:rgba(0,0,0,.15);
+      --max:1200px;
     }
-
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px 18px}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:22px 16px;
-    }
-
-    /* ===== HEADER ===== */
+    /* ===== HEADER (HARMONISÉ) ===== */
     header{
       display:flex;
       align-items:center;
@@ -49,241 +34,90 @@
       border-bottom:1px solid var(--line);
       background:#fff;
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width: 220px;
-    }
     .logo{
-      height:64px;
+      height:200px;
       width:auto;
-      border-radius:10px;
+      display:block;
     }
-    .brandText{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brandText strong{
-      font-size:13px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      font-weight:800;
-      white-space:nowrap;
-    }
-    .brandText span{
-      font-size:12px;
-      color:var(--muted);
-      font-weight:600;
-      white-space:nowrap;
-    }
-
     nav{
       display:flex;
+      gap:26px;
       align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    nav a{
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1px;
       font-weight:800;
-      opacity:.65;
-      padding:10px 10px;
-      border-radius:999px;
-      transition:opacity .18s ease, background .18s ease;
+      white-space:nowrap;
     }
-    nav a:hover{opacity:1; background:rgba(0,0,0,.04)}
-    nav a.active{opacity:1; background:rgba(0,0,0,.06)}
+    nav a{opacity:.65}
+    nav a:hover{opacity:1}
 
-    .headerCta{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-left:8px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
+    /* ===== HERO PAGE ===== */
+    .hero{
+      margin-top:20px;
       border:1px solid var(--line);
       background:#fff;
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      line-height:1;
-      transition: transform .12s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .btn:hover{box-shadow:0 8px 18px rgba(0,0,0,.08)}
-    .btn:active{transform:scale(.98)}
-    .btn.primary{
-      background:#000;
-      color:#fff;
-      border-color:#000;
-    }
-
-    /* ===== HERO ===== */
-    .hero{
-      padding:24px 0 14px;
+      padding:26px;
     }
     .hero h1{
       margin:0 0 8px;
       font-size:34px;
-      font-weight:700;
-      letter-spacing:-.4px;
+      font-weight:750;
+      letter-spacing:-.3px;
     }
     .hero p{
       margin:0;
+      color:var(--muted);
       font-size:15px;
       line-height:1.6;
-      max-width:85ch;
-      color:var(--muted);
+      max-width:75ch;
       font-weight:600;
     }
 
     /* ===== FAQ ===== */
-    .faqGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:start;
-      margin-top:16px;
-    }
-
-    .card{
-      background:var(--card);
+    .faq{
+      margin-top:20px;
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .cardPad{padding:18px}
-
-    .faqIntro h2{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .faqIntro p{
-      margin:0 0 10px;
-      color:var(--muted);
-      line-height:1.6;
-      font-weight:600;
-      font-size:14px;
-    }
-    .miniList{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.7;
-      font-weight:600;
-      font-size:14px;
-    }
-
-    details{
       background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      margin:10px 0;
-      overflow:hidden;
+      padding:18px;
     }
+    details{
+      border-bottom:1px solid var(--line);
+      padding:14px 0;
+    }
+    details:last-child{border-bottom:none}
     summary{
       cursor:pointer;
-      padding:14px 14px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
       font-size:15px;
       font-weight:800;
       list-style:none;
-      user-select:none;
     }
     summary::-webkit-details-marker{display:none}
-
-    .chev{
-      width:10px;
-      height:10px;
-      border-right:2px solid rgba(0,0,0,.55);
-      border-bottom:2px solid rgba(0,0,0,.55);
-      transform:rotate(45deg);
-      transition:transform .18s ease;
-      flex:0 0 auto;
-      margin-left:10px;
-    }
-    details[open] .chev{transform:rotate(225deg)}
-
-    .faqBody{
-      padding:0 14px 14px;
-      border-top:1px solid var(--line);
+    details p{
+      margin:10px 0 0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.65;
-      font-weight:600;
-      background:#fff;
-    }
-    .faqBody p{margin:10px 0}
-    .faqBody ul{margin:10px 0 0 18px; padding:0}
-    .faqBody li{margin:6px 0}
-
-    .note{
-      margin-top:12px;
-      padding:12px;
-      border:1px solid var(--line);
-      border-radius:var(--radius-sm);
-      background:rgba(0,0,0,.02);
-    }
-    .note strong{
-      display:block;
-      margin-bottom:6px;
-      color:var(--text);
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-
-    .faqFooterLine{
-      margin-top:14px;
-      padding-top:14px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-weight:600;
       line-height:1.6;
-      font-size:14px;
+      font-weight:600;
     }
 
     /* ===== FOOTER ===== */
     footer{
-      margin-top:22px;
-      padding:18px 0 6px;
+      margin-top:32px;
       border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-    .footerRow{
+      padding:18px 0 10px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:10px;
       flex-wrap:wrap;
-    }
-    .footerRow a{
-      opacity:.8;
-      text-decoration:underline;
-      text-underline-offset:3px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--muted);
+      font-weight:800;
     }
 
-    /* ===== BARRE MOBILE ===== */
+    /* ===== BARRE MOBILE (APPELER / ESTIMER / RDV) ===== */
     .mobileBar{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -294,7 +128,6 @@
       grid-template-columns:1fr 1fr 1fr;
       gap:10px;
       z-index:9999;
-      box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
     }
     .mobileBar a{
       display:flex;
@@ -304,39 +137,35 @@
       border:1px solid var(--line);
       background:#fff;
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       text-transform:uppercase;
       letter-spacing:1px;
       line-height:1;
-      border-radius:12px;
-      transition:transform .12s ease, box-shadow .18s ease;
     }
-    .mobileBar a:active{transform:scale(.98)}
     .mobileBar a.primary{
       background:#000;
       color:#fff;
       border-color:#000;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:980px){
-      .faqGrid{grid-template-columns:1fr}
-      .brand{min-width: unset}
-    }
-
+    /* ===== MOBILE ===== */
     @media(max-width:900px){
       nav{display:none}
       .wrap{padding:18px 12px}
+
+      /* logo centré sur mobile */
       header{justify-content:center}
-      .brand{justify-content:center}
-      .brandText{display:none} /* logo + simplicité sur mobile */
-      .logo{height:92px}
+      header a{display:flex;justify-content:center;width:100%}
+      .logo{height:160px}
 
       .hero h1{font-size:28px}
       summary{font-size:16px}
 
+      /* espace pour la barre */
       body{padding-bottom:90px;}
     }
+
+    /* Desktop : pas de barre */
     @media(min-width:901px){
       .mobileBar{display:none}
       body{padding-bottom:0;}
@@ -348,220 +177,83 @@
   <div class="wrap">
 
     <header>
-      <a class="brand" href="index.html" aria-label="Accueil Rachat Auto">
-        <img class="logo" src="assets/logo.png" alt="Rachat Auto" />
-        <div class="brandText">
-          <strong>Rachat Auto</strong>
-          <span>Reprise & transaction sécurisée</span>
-        </div>
+      <a href="index.html" aria-label="Accueil">
+        <img src="logo-rachat-auto.png" alt="Rachat Auto Laval" class="logo">
       </a>
 
-      <nav aria-label="Navigation">
-        <a href="index.html" data-nav="index.html">Accueil</a>
-        <a href="estimation.html" data-nav="estimation.html">Demande</a>
-        <a href="faq.html" data-nav="faq.html" class="active">FAQ</a>
-        <a href="contact.html" data-nav="contact.html">Contact</a>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="estimation.html">Estimation</a>
+        <a href="faq.html" style="opacity:1;">FAQ</a>
+        <a href="contact.html">Contact</a>
       </nav>
-
-      <div class="headerCta">
-        <!-- Remplacez le numéro par le vôtre -->
-        <a class="btn" href="tel:+33243678900">Appeler</a>
-        <a class="btn primary" href="estimation.html">Faire une demande</a>
-      </div>
     </header>
 
     <section class="hero">
       <h1>Questions fréquentes</h1>
       <p>
-        Retrouvez ici les informations essentielles concernant la reprise de votre véhicule et le déroulement de notre étude.
-        Nous privilégions une approche claire, sérieuse et transparente.
+        Retrouvez ici les réponses aux questions les plus courantes concernant
+        le rachat de votre véhicule à Laval.
       </p>
     </section>
 
-    <section class="faqGrid">
-      <!-- Colonne FAQ -->
-      <div class="card">
-        <div class="cardPad">
+    <section class="faq">
 
-          <details>
-            <summary>
-              <span>Comment se déroule la reprise de mon véhicule ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Après réception de votre demande, nous prenons contact avec vous afin d’échanger sur les caractéristiques et la situation de votre véhicule.</p>
-              <p>À l’issue de cet échange, une proposition personnalisée peut vous être formulée. Si un accord est trouvé, nous organisons la transaction dans un cadre simple, clair et sécurisé.</p>
-            </div>
-          </details>
+      <details>
+        <summary>L’estimation est-elle vraiment gratuite ?</summary>
+        <p>
+          Oui. L’estimation est entièrement gratuite et sans aucun engagement.
+          Vous êtes libre d’accepter ou non notre proposition.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Sous quel délai suis-je recontacté ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Chaque demande est étudiée avec attention. Vous êtes généralement recontacté rapidement après l’envoi de votre formulaire, selon les horaires d’activité.</p>
-            </div>
-          </details>
+      <details>
+        <summary>Dois-je me déplacer pour l’estimation ?</summary>
+        <p>
+          Non. Vous remplissez le formulaire en ligne, puis nous vous contactons
+          si besoin pour affiner l’estimation.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Comment s’effectue le paiement ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Le règlement est réalisé par virement bancaire sécurisé. Selon votre établissement bancaire, celui-ci peut être immédiat ou crédité dans les délais habituels.</p>
-            </div>
-          </details>
+      <details>
+        <summary>Quels véhicules rachetez-vous ?</summary>
+        <p>
+          Nous rachetons tous types de véhicules : citadines, berlines, SUV,
+          utilitaires, récents ou plus anciens.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Le paiement peut-il intervenir le jour même ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Oui, lorsque l’ensemble des éléments administratifs est validé et que l’accord est conclu, le règlement peut être effectué le jour de la transaction.</p>
-            </div>
-          </details>
+      <details>
+        <summary>Le paiement est-il sécurisé ?</summary>
+        <p>
+          Oui. Le paiement se fait par virement bancaire sécurisé, généralement
+          le jour de la cession du véhicule.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Reprenez-vous les véhicules accidentés, en panne ou sans contrôle technique ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Chaque véhicule fait l’objet d’une étude attentive. Selon son état général, sa cohérence technique et sa situation administrative, une reprise peut être envisagée à notre appréciation.</p>
-              <p>Toutes les demandes sont étudiées individuellement.</p>
-            </div>
-          </details>
+      <details>
+        <summary>Quels documents dois-je fournir ?</summary>
+        <p>
+          Carte grise, pièce d’identité, contrôle technique (si applicable),
+          factures d’entretien si disponibles.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Mon véhicule présente un défaut mécanique ou un voyant allumé. Est-ce un obstacle ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Pas nécessairement. La faisabilité d’une reprise dépend de l’ampleur du défaut, de son impact technique et de la cohérence globale du véhicule. Chaque situation est analysée avec discernement.</p>
-            </div>
-          </details>
+      <details>
+        <summary>En combien de temps la vente est-elle finalisée ?</summary>
+        <p>
+          Une fois l’accord trouvé, la vente peut être finalisée très rapidement,
+          parfois en moins de 48 heures.
+        </p>
+      </details>
 
-          <details>
-            <summary>
-              <span>Comment se déroule l’évaluation lors d’une présentation sur place ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <ul>
-                <li>Vérification visuelle générale (carrosserie, intérieur, éléments structurels)</li>
-                <li>Contrôle de la cohérence administrative et kilométrique</li>
-                <li>Essai routier si nécessaire</li>
-                <li>Lecture électronique lorsque la situation le justifie</li>
-              </ul>
-              <p>La cohérence entre les informations communiquées en amont et les éléments constatés sur place est essentielle pour garantir une transaction fluide.</p>
-              <p>En cas d’écart significatif ou d’élément non signalé, l’évaluation peut naturellement être réajustée.</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span>Quels documents sont requis ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Pour permettre une étude rigoureuse, les éléments suivants sont nécessaires :</p>
-              <ul>
-                <li>Certificat d’immatriculation (carte grise)</li>
-                <li>Pièce d’identité valide</li>
-              </ul>
-              <p>Nous nous chargeons des vérifications administratives complémentaires.</p>
-
-              <div class="note">
-                <strong>Historique & éléments d’origine</strong>
-                <p>La traçabilité a aujourd’hui une valeur réelle dans l’appréciation d’un véhicule. Les éléments suivants sont particulièrement appréciés :</p>
-                <ul>
-                  <li>Factures d’entretien détaillées</li>
-                  <li>Carnet d’entretien suivi</li>
-                  <li>Double des clés d’origine</li>
-                </ul>
-                <p>Un historique clair et complet peut influencer positivement l’appréciation globale du dossier.</p>
-              </div>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span>Est-il possible de vendre un véhicule avec un financement en cours ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Certaines situations peuvent être étudiées. La faisabilité dépend du type de contrat (crédit classique, LOA, LLD), du montant restant dû et des modalités de remboursement anticipé.</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span>Suis-je engagé après ma demande ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Non. Votre demande et l’éventuelle proposition formulée ne vous engagent en rien.</p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span>Mes informations sont-elles protégées ?</span>
-              <span class="chev" aria-hidden="true"></span>
-            </summary>
-            <div class="faqBody">
-              <p>Oui. Vos informations sont traitées avec la plus stricte confidentialité et exclusivement dans le cadre de votre demande.</p>
-            </div>
-          </details>
-
-          <div class="faqFooterLine">
-            Chaque dossier est étudié avec sérieux, méthode et transparence, afin de garantir une transaction claire et sécurisée.
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Colonne latérale (cohérence + premium, sans être élitiste) -->
-      <aside class="card">
-        <div class="cardPad faqIntro">
-          <h2>Une étude sérieuse, sans automatisme</h2>
-          <p>
-            Toutes les demandes sont les bienvenues. Nous privilégions une analyse factuelle et cohérente,
-            fondée sur les informations communiquées et l’état réel du véhicule.
-          </p>
-          <p><strong>Pour accélérer l’étude, pensez à préparer :</strong></p>
-          <ul class="miniList">
-            <li>Factures d’entretien et historique</li>
-            <li>Double des clés</li>
-            <li>Kilométrage et usage</li>
-            <li>Éventuels défauts connus (voyants, bruits, CT, etc.)</li>
-          </ul>
-
-          <div style="height:14px"></div>
-
-          <a class="btn primary" href="estimation.html" style="width:100%; border-radius:14px; padding:14px 14px;">
-            Faire une demande
-          </a>
-          <div style="height:10px"></div>
-          <a class="btn" href="tel:+33243678900" style="width:100%; border-radius:14px; padding:14px 14px;">
-            Appeler
-          </a>
-        </div>
-      </aside>
     </section>
 
     <footer>
-      <div class="footerRow">
-        <div>Rachat Auto — Transaction sécurisée</div>
-        <div>
-          <a href="faq.html">FAQ</a> ·
-          <a href="contact.html">Contact</a> ·
-          <a href="mentions-legales.html">Mentions légales</a>
-        </div>
+      <div>© Rachat Auto Laval</div>
+      <div>
+        <a href="estimation.html">Estimation</a> •
+        <a href="contact.html">Contact</a>
       </div>
     </footer>
 
@@ -570,31 +262,8 @@
   <!-- BARRE FIXE MOBILE -->
   <div class="mobileBar" aria-label="Actions rapides">
     <a class="primary" href="tel:+33243678900">Appeler</a>
-    <a href="estimation.html">Demande</a>
+    <a href="estimation.html">Estimer</a>
     <a href="https://calendly.com/rachatautolaval" target="_blank" rel="noopener">RDV</a>
   </div>
-
-  <script>
-    // 1) Ouvrir une seule question FAQ à la fois (rendu premium)
-    (function () {
-      const container = document.querySelector('.card details')?.closest('.card');
-      if (!container) return;
-      const items = container.querySelectorAll('details');
-      items.forEach(d => {
-        d.addEventListener('toggle', () => {
-          if (!d.open) return;
-          items.forEach(other => { if (other !== d) other.open = false; });
-        });
-      });
-    })();
-
-    // 2) Active link nav selon l’URL (utile si vous réutilisez le même header partout)
-    (function () {
-      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      document.querySelectorAll('nav a[data-nav]').forEach(a => {
-        a.classList.toggle('active', (a.getAttribute('data-nav') || '').toLowerCase() === path);
-      });
-    })();
-  </script>
 </body>
 </html>
